@@ -23,7 +23,9 @@ public class col : MonoBehaviour
 
 			if (other.gameObject.name == "gun")
 			{
+
 				cube.gameObject.SetActive(false);
+
 				cube = GameObject.Find("player").transform.Find("gun_grab");
 
 				print("ÃÑ È¹µæ");
@@ -35,6 +37,7 @@ public class col : MonoBehaviour
             {
 
 				cube.gameObject.SetActive(false);
+
 				cube = GameObject.Find("player").transform.Find("honey_grab");
 				print("²Ü È¹µæ");
 				cube.gameObject.SetActive(true);

@@ -25,7 +25,7 @@ public class shot : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 GameObject obj = Instantiate(bullet, spot.transform.position, Quaternion.identity);
-                obj.GetComponent<Rigidbody>().AddForce(spot.transform.forward * 700f);
+                obj.GetComponent<Rigidbody>().AddForce(spot.transform.forward * 1500f);
                 print("น฿ป็");
                 Destroy(obj, 5);
             }
