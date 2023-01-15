@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class coindraw : MonoBehaviour
 {
     public Text text;
-    int score = 0;
+    int coin = 0;
 
     private void Start()
     {
@@ -16,12 +16,12 @@ public class coindraw : MonoBehaviour
     public void GetScore()
     {
         print("???");
-        score += 100;
+        coin += 100;
         SetText();
     }
 
     public void SetText()
     {
-        text.text = "Score : " + score.ToString();
+        text.text = "coin : " + coin.ToString();
     }
 }
