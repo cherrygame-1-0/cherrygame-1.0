@@ -5,11 +5,12 @@ using UnityEngine;
 public class col : MonoBehaviour
 {
 	private Transform cube;
-
+	coindraw coindraw;
 	void Start()
     {
 		print("start");
-    }
+		coindraw = FindObjectOfType<coindraw>();
+	}
 
 	void OnCollisionEnter(Collision other)
 	{
@@ -43,7 +44,20 @@ public class col : MonoBehaviour
 				cube.gameObject.SetActive(true);
 			}
 
+			if (other.gameObject.name == "coin")
+			{
+				coindraw.GetScore();
+				print("ÄÚÀÎ È¹µæ");
+
+			}
+
 		}
+
+		if (other.gameObject.tag == "dieobject")
+        {
+			Destroy(gameObject);
+		}
+
 
 	}
 

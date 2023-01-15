@@ -23,6 +23,6 @@ public class PlayerMove : MonoBehaviour
 
         charRigidbody.velocity = inputDir * moveSpeed;
 
-        transform.LookAt(transform.position + inputDir);
+        //transform.LookAt(transform.position + inputDir);
     }
 }
