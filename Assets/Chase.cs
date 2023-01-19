@@ -6,6 +6,8 @@ public class Chase : MonoBehaviour
 {
     Transform target = null;
     public float enemyMoveSpeed;
+    [SerializeField]
+    private Animator animator;
     //float enemyMoveSpeed = 20f;
 
     // Update is called once per frame
@@ -14,6 +16,7 @@ public class Chase : MonoBehaviour
         if (target != null)
         {
             Vector3 dir = target.position - transform.position;
+            
             transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
         }
 	}
@@ -23,6 +26,7 @@ public class Chase : MonoBehaviour
         if (col.tag == "Player")
         {
             target = col.gameObject.transform;
+            animator.SetBool("Target_Found", true);
             Debug.Log("Box Enemy:Target found");
         }
     }
