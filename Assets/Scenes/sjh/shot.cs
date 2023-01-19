@@ -18,7 +18,7 @@ public class shot : MonoBehaviour
     void Update()
     {
 
-        cube = GameObject.Find("player").transform.Find("gun_grab");
+        cube = GameObject.Find("mixamorig:RightHand").transform.Find("gun_grab");
 
         if (cube.gameObject.activeSelf == true)
         {

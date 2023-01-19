@@ -5,6 +5,7 @@ using UnityEngine;
 public class col : MonoBehaviour
 {
 	private Transform cube;
+
 	coindraw coindraw;
 	void Start()
     {
@@ -18,16 +19,19 @@ public class col : MonoBehaviour
 		if (other.gameObject.tag == "object")
 		{
 
-			cube = GameObject.Find("player").transform.Find("gun_grab");
+			cube = GameObject.Find("mixamorig:RightHand").transform.Find("gun_grab");
+
+
 
 			Destroy(other.gameObject);
+
 
 			if (other.gameObject.name == "gun")
 			{
 
 				cube.gameObject.SetActive(false);
 
-				cube = GameObject.Find("player").transform.Find("gun_grab");
+				cube = GameObject.Find("mixamorig:RightHand").transform.Find("gun_grab");
 
 				print("ÃÑ È¹µæ");
 				cube.gameObject.SetActive(true);
@@ -39,7 +43,7 @@ public class col : MonoBehaviour
 
 				cube.gameObject.SetActive(false);
 
-				cube = GameObject.Find("player").transform.Find("honey_grab");
+				cube = GameObject.Find("mixamorig:RightHand").transform.Find("honey_grab");
 				print("²Ü È¹µæ");
 				cube.gameObject.SetActive(true);
 			}

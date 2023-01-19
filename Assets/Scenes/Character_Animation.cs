@@ -24,10 +24,9 @@ public class Character_Animation : MonoBehaviour
     void Update()
     {   //public Animator CHR_ANIM;
         //CHR_ANIM.SetTrigger("PadeOut");
-        if (Input.GetKey(KeyCode.Z))
-        {
-            animator.SetBool("IsMove", true);
-        }
+
+        animator.SetBool("IsMove", true);
+        
 
         if (Input.GetKey(KeyCode.C))
         {

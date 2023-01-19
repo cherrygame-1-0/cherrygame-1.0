@@ -4,25 +4,73 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float moveSpeed;
-    private Rigidbody charRigidbody;
+    GameObject obj;
 
-    // Start is called before the first frame update
+    private Rigidbody rigid;
+
+    public int JumpPower;
+    public int MoveSpeed;
+    public float runMoveSpeed;
+    private bool IsJumping;
+
     void Start()
     {
-        charRigidbody = GetComponent<Rigidbody>();
+        obj = GameObject.Find("Monster");
+        obj.GetComponent<Chase>().test();
+
+        rigid = GetComponent<Rigidbody>();    
+        IsJumping = false;                     
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float hAxis = Input.GetAxisRaw("Horizontal");
-        float vAxis = Input.GetAxisRaw("Vertical");
-
-        Vector3 inputDir = new Vector3(hAxis, 0, vAxis).normalized;
-
-        charRigidbody.velocity = inputDir * moveSpeed;
-
-        transform.LookAt(transform.position + inputDir);
+        
+        Move();
+        Jump();
     }
+
+    void Move()
+    {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+
+        transform.Translate((new Vector3(h, 0, 0) * MoveSpeed) * Time.deltaTime);
+        transform.Translate(Vector3.forward * runMoveSpeed);
+
 }
+
+    void Jump()
+    {
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+
+            if (!IsJumping)
+            {
+
+                IsJumping = true;
+
+                rigid.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
+            }
+
+            else
+            {
+
+                return;
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.name == "Plane")
+        {
+            IsJumping = false;
+        }
+    }
+
+}
+
+
