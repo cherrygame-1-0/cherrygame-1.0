@@ -36,12 +36,14 @@ public class col : MonoBehaviour
 
 			if (other.gameObject.name == "gun")
 			{
-				print("√— »πµÊ");
+
+				
+				
 				honeey = GameObject.Find("honey");
 				Destroy(honeey);
 
-				cube.gameObject.SetActive(false);
-
+				//cube.gameObject.SetActive(false);
+				print("√—»Æ¿Œ");
 				cube = GameObject.Find("mixamorig:RightHand").transform.Find("gun_grab");
 
 				print("√— »πµÊ");
@@ -64,8 +66,8 @@ public class col : MonoBehaviour
 
 			if (other.gameObject.name == "coin")
 			{
-				coindraw.GetScore();
-				result += 1;
+				//coindraw.GetScore();
+				//result += 1;
 				print("ƒ⁄¿Œ »πµÊ");
 
 			}
