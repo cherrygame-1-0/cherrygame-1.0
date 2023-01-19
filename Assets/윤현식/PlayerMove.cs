@@ -17,7 +17,6 @@ public class PlayerMove : MonoBehaviour
     {
         obj = GameObject.Find("Monster");
         obj.GetComponent<Chase>().test();
-
         rigid = GetComponent<Rigidbody>();    
         IsJumping = false;                     
     }
@@ -38,14 +37,14 @@ public class PlayerMove : MonoBehaviour
         transform.Translate((new Vector3(h, 0, 0) * MoveSpeed) * Time.deltaTime);
         transform.Translate(Vector3.forward * runMoveSpeed);
 
-}
+    }
 
     void Jump()
     {
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-
+            print("ss");
             if (!IsJumping)
             {
 
