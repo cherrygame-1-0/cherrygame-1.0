@@ -6,30 +6,20 @@ public class Chase : MonoBehaviour
 {
     Transform target = null;
     public float enemyMoveSpeed;
-
+    [SerializeField]
+    private Animator animator;
     private Transform gun;
-
     private Transform honey;
-    //float enemyMoveSpeed = 20f;
+
     void start()
     {
         print("Ω√¿€");
     }
-    // Update is called once per frame
+
     void Update()
     {
         gun = GameObject.Find("mixamorig:RightHand").transform.Find("gun_grab");
         honey = GameObject.Find("mixamorig:RightHand").transform.Find("honey_grab");
-
-        //if (target != null)
-        //{
-        //    if (gun.gameObject.activeSelf == true || honey.gameObject.activeSelf == true)
-        //    {
-        //        print("???");
-        //        Vector3 dir = target.position - transform.position;
-        //        transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
-        //    }
-        //}
 
 
         if (target != null)
@@ -47,6 +37,7 @@ public class Chase : MonoBehaviour
     {
         if (col.tag == "Player")
         {
+            animator.SetBool("Target_Found", true);
             target = col.gameObject.transform;
             Debug.Log("Box Enemy:Target found");
         }
@@ -56,10 +47,5 @@ public class Chase : MonoBehaviour
     {
         print("zzz");
     }
-    ///private void OnTriggerExit(Collider col)
-    //{
-    //    target = null;
-    //    Debug.Log("Box Enemy:Target lost");
-    //}
 
 }
