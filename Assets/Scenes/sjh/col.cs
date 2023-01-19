@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class col : MonoBehaviour
 {
+	GameObject honeey;
+	GameObject ggun;
+	GameObject obj1;
+	int result = 0;
 	private Transform cube;
 
 	coindraw coindraw;
@@ -28,6 +32,8 @@ public class col : MonoBehaviour
 
 			if (other.gameObject.name == "gun")
 			{
+				honeey = GameObject.Find("honey");
+				Destroy(honeey);
 
 				cube.gameObject.SetActive(false);
 
@@ -40,6 +46,8 @@ public class col : MonoBehaviour
 
 			if (other.gameObject.name == "honey")
             {
+				ggun = GameObject.Find("gun");
+				Destroy(ggun);
 
 				cube.gameObject.SetActive(false);
 
@@ -51,17 +59,20 @@ public class col : MonoBehaviour
 			if (other.gameObject.name == "coin")
 			{
 				coindraw.GetScore();
+				result += 1;
 				print("ÄÚÀÎ È¹µæ");
 
 			}
 
 		}
-
 		if (other.gameObject.tag == "dieobject")
-        {
+		{
+			Debug.Log("GameOver");
+			//StopAllCoroutines();
 			Destroy(gameObject);
+			obj1 = GameObject.Find("Canvas");
+			obj1.GetComponent<GameOverMenu>().Show();
 		}
-
 
 	}
 
