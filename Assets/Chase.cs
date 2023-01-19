@@ -6,6 +6,12 @@ public class Chase : MonoBehaviour
 {
     Transform target = null;
     public float enemyMoveSpeed;
+<<<<<<< HEAD
+=======
+    [SerializeField]
+    private Animator animator;
+    //float enemyMoveSpeed = 20f;
+>>>>>>> lhs_0.2
 
     private Transform gun;
 
@@ -34,12 +40,18 @@ public class Chase : MonoBehaviour
 
         if (target != null)
         {
+<<<<<<< HEAD
             if (gun.gameObject.activeSelf == true || honey.gameObject.activeSelf == true)
             {
 
                 Vector3 dir = target.position - transform.position;
                 transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
             }
+=======
+            Vector3 dir = target.position - transform.position;
+            
+            transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
+>>>>>>> lhs_0.2
         }
     }
 
@@ -48,6 +60,7 @@ public class Chase : MonoBehaviour
         if (col.tag == "Player")
         {
             target = col.gameObject.transform;
+            animator.SetBool("Target_Found", true);
             Debug.Log("Box Enemy:Target found");
         }
     }

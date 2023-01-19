@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class col : MonoBehaviour
 {
+	[SerializeField]
+	private Animator animator;
 	private Transform cube;
+<<<<<<< HEAD:Assets/Scenes/sjh/col.cs
 
+=======
+	public Animation anim;
+>>>>>>> lhs_0.2:Assets/Scenes/col.cs
 	coindraw coindraw;
 	void Start()
     {
@@ -35,6 +41,7 @@ public class col : MonoBehaviour
 
 				print("ÃÑ È¹µæ");
 				cube.gameObject.SetActive(true);
+				animator.SetBool("Pistol", true);
 
 			}
 
@@ -59,7 +66,9 @@ public class col : MonoBehaviour
 
 		if (other.gameObject.tag == "dieobject")
         {
-			Destroy(gameObject);
+			
+			animator.SetBool("Die", true);
+			//Destroy(gameObject);
 		}
 
 
