@@ -7,11 +7,9 @@ public class col : MonoBehaviour
 	[SerializeField]
 	private Animator animator;
 	private Transform cube;
-<<<<<<< HEAD:Assets/Scenes/sjh/col.cs
 
-=======
 	public Animation anim;
->>>>>>> lhs_0.2:Assets/Scenes/col.cs
+
 	coindraw coindraw;
 	void Start()
     {
@@ -25,7 +23,7 @@ public class col : MonoBehaviour
 		if (other.gameObject.tag == "object")
 		{
 
-			cube = GameObject.Find("mixamorig:RightHand").transform.Find("gun_grab");
+			cube = GameObject.Find("playerRightHand").transform.Find("gun_grab");
 
 
 
@@ -37,7 +35,7 @@ public class col : MonoBehaviour
 
 				cube.gameObject.SetActive(false);
 
-				cube = GameObject.Find("mixamorig:RightHand").transform.Find("gun_grab");
+				cube = GameObject.Find("playerRightHand").transform.Find("gun_grab");
 
 				print("ÃÑ È¹µæ");
 				cube.gameObject.SetActive(true);
@@ -50,7 +48,7 @@ public class col : MonoBehaviour
 
 				cube.gameObject.SetActive(false);
 
-				cube = GameObject.Find("mixamorig:RightHand").transform.Find("honey_grab");
+				cube = GameObject.Find("playerRightHand").transform.Find("honey_grab");
 				print("²Ü È¹µæ");
 				cube.gameObject.SetActive(true);
 			}
@@ -68,7 +66,7 @@ public class col : MonoBehaviour
         {
 			
 			animator.SetBool("Die", true);
-			//Destroy(gameObject);
+			Destroy(gameObject,2);
 		}
 
 
