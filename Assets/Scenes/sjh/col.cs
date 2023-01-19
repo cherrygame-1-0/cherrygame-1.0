@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class col : MonoBehaviour
 {
+<<<<<<< HEAD:Assets/Scenes/sjh/col.cs
 	[SerializeField]
 	private Animator animator;
+=======
+	GameObject honeey;
+	GameObject ggun;
+	GameObject obj1;
+	int result = 0;
+>>>>>>> origin/YHS_03:Assets/Scenes/col.cs
 	private Transform cube;
 
 	public Animation anim;
@@ -32,6 +39,8 @@ public class col : MonoBehaviour
 
 			if (other.gameObject.name == "gun")
 			{
+				honeey = GameObject.Find("honey");
+				Destroy(honeey);
 
 				cube.gameObject.SetActive(false);
 
@@ -45,6 +54,8 @@ public class col : MonoBehaviour
 
 			if (other.gameObject.name == "honey")
             {
+				ggun = GameObject.Find("gun");
+				Destroy(ggun);
 
 				cube.gameObject.SetActive(false);
 
@@ -56,19 +67,27 @@ public class col : MonoBehaviour
 			if (other.gameObject.name == "coin")
 			{
 				coindraw.GetScore();
+				result += 1;
 				print("ÄÚÀÎ È¹µæ");
 
 			}
 
 		}
-
 		if (other.gameObject.tag == "dieobject")
+<<<<<<< HEAD:Assets/Scenes/sjh/col.cs
         {
 			
 			animator.SetBool("Die", true);
 			Destroy(gameObject,2);
+=======
+		{
+			Debug.Log("GameOver");
+			//StopAllCoroutines();
+			Destroy(gameObject);
+			obj1 = GameObject.Find("Canvas");
+			obj1.GetComponent<GameOverMenu>().Show();
+>>>>>>> origin/YHS_03:Assets/Scenes/col.cs
 		}
-
 
 	}
 
