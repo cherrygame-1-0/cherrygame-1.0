@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class col : MonoBehaviour
 {
+<<<<<<< HEAD:Assets/Scenes/sjh/col.cs
 	GameObject honeey;
 	GameObject ggun;
 	GameObject obj1;
 	int result = 0;
 	private Transform cube;
 
+=======
+	[SerializeField]
+	private Animator animator;
+	private Transform cube;
+	public Animation anim;
+>>>>>>> lhs_0.2:Assets/Scenes/col.cs
 	coindraw coindraw;
 	void Start()
     {
@@ -41,6 +48,7 @@ public class col : MonoBehaviour
 
 				print("ÃÑ È¹µæ");
 				cube.gameObject.SetActive(true);
+				animator.SetBool("Pistol", true);
 
 			}
 
@@ -66,12 +74,19 @@ public class col : MonoBehaviour
 
 		}
 		if (other.gameObject.tag == "dieobject")
+<<<<<<< HEAD:Assets/Scenes/sjh/col.cs
 		{
 			Debug.Log("GameOver");
 			//StopAllCoroutines();
 			Destroy(gameObject);
 			obj1 = GameObject.Find("Canvas");
 			obj1.GetComponent<GameOverMenu>().Show();
+=======
+        {
+			
+			animator.SetBool("Die", true);
+			//Destroy(gameObject);
+>>>>>>> lhs_0.2:Assets/Scenes/col.cs
 		}
 
 	}
