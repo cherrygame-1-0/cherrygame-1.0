@@ -481,7 +481,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523bfd3aea9f18f45ac110279c182e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  JumpPower: 10
+  MoveSpeed: 10
+  runMoveSpeed: 0.1
 --- !u!114 &65537553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe9bd166e1141b46826fa8012734afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &65537555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -925,6 +929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMoveSpeed: 20
+  animator: {fileID: 0}
 --- !u!136 &167238892
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2239,6 +2244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe9bd166e1141b46826fa8012734afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &803376579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2251,7 +2258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d46f03859dcd764fad36ae887726beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &803376580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3873,6 +3879,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe9bd166e1141b46826fa8012734afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &1656538442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3915,7 +3923,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523bfd3aea9f18f45ac110279c182e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  JumpPower: 0
+  MoveSpeed: 0
+  runMoveSpeed: 0
 --- !u!136 &1656538445
 CapsuleCollider:
   m_ObjectHideFlags: 0

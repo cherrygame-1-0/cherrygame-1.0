@@ -256,7 +256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  anim: {fileID: 0}
 --- !u!114 &87698386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,7 +298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523bfd3aea9f18f45ac110279c182e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  JumpPower: 0
+  MoveSpeed: 0
+  runMoveSpeed: 0
 --- !u!136 &87698389
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -631,7 +632,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  anim: {fileID: 0}
 --- !u!114 &204778586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,7 +644,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d46f03859dcd764fad36ae887726beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &204778587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2489,7 +2488,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1107733363}
-  anim: {fileID: 0}
 --- !u!114 &1107733361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2516,7 +2514,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523bfd3aea9f18f45ac110279c182e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  JumpPower: 10
+  MoveSpeed: 10
+  runMoveSpeed: 0.1
 --- !u!95 &1107733363
 Animator:
   serializedVersion: 4

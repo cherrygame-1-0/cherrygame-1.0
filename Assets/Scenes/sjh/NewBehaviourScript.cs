@@ -2,23 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class col : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
-
-	GameObject honeey;
-	GameObject ggun;
-	GameObject obj1;
-	int result = 0;
+	// Start is called before the first frame update
 	private Transform cube;
-
-
-	[SerializeField]
-	private Animator animator;
-
 
 	coindraw coindraw;
 	void Start()
-    {
+	{
 		print("start");
 		coindraw = FindObjectOfType<coindraw>();
 	}
@@ -29,34 +20,28 @@ public class col : MonoBehaviour
 		if (other.gameObject.tag == "object")
 		{
 
+			cube = GameObject.Find("mixamorig:RightHand").transform.Find("gun_grab");
+
+
+
 			Destroy(other.gameObject);
 
-			print("ø¿∫Í¡ß∆Æ »Æ¿Œ");
 
 			if (other.gameObject.name == "gun")
 			{
 
-				
-				
-				honeey = GameObject.Find("honey");
-				Destroy(honeey);
+				print("√— 123123»πµÊ");
+				cube.gameObject.SetActive(false);
 
-				//cube.gameObject.SetActive(false);
-				print("√—»Æ¿Œ");
 				cube = GameObject.Find("mixamorig:RightHand").transform.Find("gun_grab");
 
 				print("√— »πµÊ");
-				print("æ÷¥œ∏ﬁ¿Ãº«");
-				cube.gameObject.SetActive(false);
-				print("æ÷¥œ∏ﬁ¿Ãº«2");
-				animator.SetBool("Pistol", true);
+				cube.gameObject.SetActive(true);
 
 			}
 
 			if (other.gameObject.name == "honey")
-            {
-				ggun = GameObject.Find("gun");
-				Destroy(ggun);
+			{
 
 				cube.gameObject.SetActive(false);
 
@@ -67,24 +52,18 @@ public class col : MonoBehaviour
 
 			if (other.gameObject.name == "coin")
 			{
-				//coindraw.GetScore();
-				//result += 1;
+				coindraw.GetScore();
 				print("ƒ⁄¿Œ »πµÊ");
 
 			}
 
 		}
+
 		if (other.gameObject.tag == "dieobject")
 		{
-			Debug.Log("GameOver");
-			//StopAllCoroutines();
-			Destroy(gameObject,2);
-
-			obj1 = GameObject.Find("Canvas");
-			obj1.GetComponent<GameOverMenu>().Show();
-			animator.SetBool("Die", true);
+			Destroy(gameObject);
 		}
 
-	}
 
+	}
 }
