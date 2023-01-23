@@ -8,6 +8,8 @@ public class col : MonoBehaviour
 	[SerializeField]
 	private Animator animator;
 
+
+
 	GameObject honeey;
 	GameObject ggun;
 	GameObject obj1;
@@ -20,6 +22,7 @@ public class col : MonoBehaviour
 	coindraw coindraw;
 	void Start()
     {
+
 		print("start");
 		coindraw = FindObjectOfType<coindraw>();
 	}
@@ -76,9 +79,11 @@ public class col : MonoBehaviour
 		if (other.gameObject.tag == "dieobject")
 
         {
-			
-			animator.SetBool("Die", true);
+			GameObject.Find("Monster").GetComponent<Chase>().target = null;
 
+			GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
+			GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
+			animator.SetBool("Die", true);
 			Destroy(gameObject,2);
 
 			Debug.Log("GameOver");

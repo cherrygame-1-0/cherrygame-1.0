@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Chase : MonoBehaviour
 {
-    Transform target = null;
+    public Transform target = null;
     public float enemyMoveSpeed;
+
+
+    float timer;
+    int waitingTime;
 
     [SerializeField]
     private Animator animator;
@@ -17,11 +21,14 @@ public class Chase : MonoBehaviour
 
     void start()
     {
+
         print("Ω√¿€");
     }
 
     void Update()
     {
+
+
         gun = GameObject.Find("playerRightHand").transform.Find("gun_grab");
         honey = GameObject.Find("playerRightHand").transform.Find("honey_grab");
 
@@ -31,23 +38,32 @@ public class Chase : MonoBehaviour
         if (target != null)
         {
 
+
             if (gun.gameObject.activeSelf == true || honey.gameObject.activeSelf == true)
             {
 
                 Vector3 dir = target.position - transform.position;
                 transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
+                transform.LookAt(transform.position + dir);
             }
-
         }
-    }
 
+
+
+    }
+    void OnCollisionEnter(Collision other)
+    {
+        print("stop");
+        //target = null;
+    }
     private void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player")
-        {
+        {   
             target = col.gameObject.transform;
             animator.SetBool("Target_Found", true);
             Debug.Log("Box Enemy:Target found");
+
         }
     }
 

@@ -47,10 +47,9 @@ public class PlayerMove : MonoBehaviour
             print("ss");
             if (!IsJumping)
             {
-
                 IsJumping = true;
-
                 rigid.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
+
             }
 
             else
@@ -70,6 +69,11 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    public void highjump()
+    {
+        print("전달받음");
+        rigid.AddForce(Vector3.up * JumpPower * 2, ForceMode.Impulse);
+    }
 }
 
 
