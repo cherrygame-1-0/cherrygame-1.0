@@ -11,6 +11,7 @@ public class col : MonoBehaviour
 	GameObject honeey;
 	GameObject ggun;
 	GameObject obj1;
+	GameObject obj2; // 다음 스테이지 넘어가려고
 	int result = 0;
 
 	private Transform cube;
@@ -88,6 +89,15 @@ public class col : MonoBehaviour
 
 		}
 
+		if (other.gameObject.tag == "goal") // 결승선 구현 코드
+
+		{
+			Debug.Log("Goal");
+
+			obj2 = GameObject.Find("Canvas");
+			obj2.GetComponent<NextStage>().Show();
+
+		}
 	}
 
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 {
@@ -11,6 +12,7 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     public CanvasGroup mainGroup;
     public CanvasGroup stageGroup;
     public CanvasGroup optionGroup;
+    public CanvasGroup storeGroup; // ªÛ¡° 
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
         switch(currentType)
         {
             case BTNType.Play:
+                //SceneManager.LoadScene("LoadingManager"); ø÷ æ»µ≈ ΩÀ∆»
                 Debug.Log("∞‘¿”Ω√¿€");
                 break;
             case BTNType.Stage:
@@ -30,11 +33,19 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 CanvasGroupOn(stageGroup);
                 CanvasGroupOff(optionGroup);
                 CanvasGroupOff(mainGroup);
+                CanvasGroupOff(storeGroup);
                 break;
             case BTNType.Option:
                 CanvasGroupOn(optionGroup);
                 CanvasGroupOff(mainGroup);
                 CanvasGroupOff(stageGroup);
+                CanvasGroupOff(storeGroup);
+                break;
+            case BTNType.Store:
+                CanvasGroupOn(storeGroup);
+                CanvasGroupOff(mainGroup);
+                CanvasGroupOff(stageGroup);
+                CanvasGroupOff(optionGroup);
                 break;
             case BTNType.Sound:
                 if(isSound)
@@ -51,6 +62,7 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 CanvasGroupOn(mainGroup);
                 CanvasGroupOff(optionGroup);
                 CanvasGroupOff(stageGroup);
+                CanvasGroupOff(storeGroup);
                 break;
             case BTNType.Quit:
                 Application.Quit();
