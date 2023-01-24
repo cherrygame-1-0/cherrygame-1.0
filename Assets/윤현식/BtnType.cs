@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 {
@@ -11,18 +12,20 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     public CanvasGroup mainGroup;
     public CanvasGroup stageGroup;
     public CanvasGroup optionGroup;
+    public CanvasGroup storeGroup; // ªÛ¡° 
+    GameObject cherry= GameObject.Find("chery");
 
     private void Start()
     {
         defaultScale = buttonScale.localScale;
     }
-
     bool isSound;
     public void OnBtnClick()
     {
         switch(currentType)
         {
             case BTNType.Play:
+                //SceneManager.LoadScene("LoadingManager"); ø÷ æ»µ≈ ΩÀ∆»
                 Debug.Log("∞‘¿”Ω√¿€");
                 break;
             case BTNType.Stage:
@@ -30,11 +33,20 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 CanvasGroupOn(stageGroup);
                 CanvasGroupOff(optionGroup);
                 CanvasGroupOff(mainGroup);
+                CanvasGroupOff(storeGroup);
+                cherry.SetActive(false);
                 break;
             case BTNType.Option:
                 CanvasGroupOn(optionGroup);
                 CanvasGroupOff(mainGroup);
                 CanvasGroupOff(stageGroup);
+                CanvasGroupOff(storeGroup);
+                break;
+            case BTNType.Store:
+                CanvasGroupOn(storeGroup);
+                CanvasGroupOff(mainGroup);
+                CanvasGroupOff(stageGroup);
+                CanvasGroupOff(optionGroup);
                 break;
             case BTNType.Sound:
                 if(isSound)
@@ -51,6 +63,7 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 CanvasGroupOn(mainGroup);
                 CanvasGroupOff(optionGroup);
                 CanvasGroupOff(stageGroup);
+                CanvasGroupOff(storeGroup);
                 break;
             case BTNType.Quit:
                 Application.Quit();
