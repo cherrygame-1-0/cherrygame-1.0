@@ -67,8 +67,8 @@ public class col : MonoBehaviour
 
 			if (other.gameObject.name == "coin")
 			{
-				coindraw.GetScore();
-				result += 1;
+				//coindraw.GetScore();
+				coindraw.coin += 100;
 				print("ÄÚÀÎ È¹µæ");
 
 			}

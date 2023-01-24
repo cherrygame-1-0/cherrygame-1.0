@@ -13,12 +13,12 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     public CanvasGroup stageGroup;
     public CanvasGroup optionGroup;
     public CanvasGroup storeGroup; // ªÛ¡° 
+    GameObject cherry= GameObject.Find("chery");
 
     private void Start()
     {
         defaultScale = buttonScale.localScale;
     }
-
     bool isSound;
     public void OnBtnClick()
     {
@@ -34,6 +34,7 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 CanvasGroupOff(optionGroup);
                 CanvasGroupOff(mainGroup);
                 CanvasGroupOff(storeGroup);
+                cherry.SetActive(false);
                 break;
             case BTNType.Option:
                 CanvasGroupOn(optionGroup);

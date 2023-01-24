@@ -5,23 +5,25 @@ using UnityEngine.UI;
 
 public class coindraw : MonoBehaviour
 {
-    public Text text;
-    int coin = 0;
+    public static int coin = 0;
 
     private void Start()
     {
-        SetText();
+        coin = 0;
     }
 
-    public void GetScore()
-    {
-        print("???");
-        coin += 100;
-        SetText();
-    }
+    //public void GetScore()
+    //{
+    //    coin += 100;
+    //    SetText();
+    //}
 
-    public void SetText()
+    //public void SetText()
+    //{
+    //    text.text = "coin : " + coin.ToString();
+    //}
+    private void Update()
     {
-        text.text = "coin : " + coin.ToString();
+        GetComponent<Text>().text = coin.ToString();
     }
 }
