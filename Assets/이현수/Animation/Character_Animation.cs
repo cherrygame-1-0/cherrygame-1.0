@@ -28,7 +28,7 @@ public class Character_Animation : MonoBehaviour
         animator.SetBool("IsMove", true);
         
 
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             animator.SetBool("Jump", true);
 
