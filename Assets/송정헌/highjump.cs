@@ -19,9 +19,6 @@ public class highjump : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
 
-        print("슈퍼점프 인식");
-
-        print("슈퍼점프 시작");
         GameObject.Find("player").GetComponent<PlayerMove>().highjump();
 
     }
