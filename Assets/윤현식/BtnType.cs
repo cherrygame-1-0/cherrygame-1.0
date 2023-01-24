@@ -13,11 +13,12 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     public CanvasGroup stageGroup;
     public CanvasGroup optionGroup;
     public CanvasGroup storeGroup; // ªÛ¡° 
-    GameObject cherry= GameObject.Find("chery");
+    GameObject cherry;
 
     private void Start()
     {
         defaultScale = buttonScale.localScale;
+        cherry = GameObject.Find("chery");
     }
     bool isSound;
     public void OnBtnClick()
