@@ -1500,6 +1500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfc1bd1e5e4ef945b9958e17e8dd2c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   enemyMoveSpeed: -15
   animator: {fileID: 128155472}
 --- !u!95 &128155472
@@ -1705,7 +1706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130967344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.8, y: 8.7, z: 122.33777}
+  m_LocalPosition: {x: -20.8, y: 8.7, z: 122.33777}
   m_LocalScale: {x: 17.434607, y: 20, z: 296.58795}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17130,7 +17131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438061487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.6, y: 10.27, z: 125.43776}
+  m_LocalPosition: {x: 17.2, y: 10.27, z: 125.43776}
   m_LocalScale: {x: 11.2695, y: 20, z: 296.58795}
   m_ConstrainProportionsScale: 0
   m_Children: []
