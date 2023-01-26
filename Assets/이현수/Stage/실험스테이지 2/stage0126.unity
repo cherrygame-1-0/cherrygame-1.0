@@ -38140,6 +38140,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextStageUI: {fileID: 2628931}
+  f_coin: {fileID: 0}
+  s_coin: {fileID: 0}
+  t_coin: {fileID: 0}
 --- !u!114 &1387135575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39901,7 +39904,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433630212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.47661, y: 1.3461742, z: -22.101261}
+  m_LocalPosition: {x: -4.47661, y: 1, z: -22.101261}
   m_LocalScale: {x: 0.5720945, y: 1.0055832, z: 0.75980616}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -62231,7 +62234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471272214451117061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.22661, y: 1.3461742, z: -42.83406}
+  m_LocalPosition: {x: -0.22661, y: 0.95, z: -42.83406}
   m_LocalScale: {x: 0.5720945, y: 1.0055832, z: 0.75980616}
   m_ConstrainProportionsScale: 0
   m_Children:

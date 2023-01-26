@@ -19,7 +19,7 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     {
         defaultScale = buttonScale.localScale;
         cherry = GameObject.Find("chery");
-        cherry.SetActive(true);
+        //cherry.SetActive(true);
     }
     bool isSound;
     public void OnBtnClick()
@@ -64,11 +64,13 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 isSound = !isSound;
                 break;
             case BTNType.Back:
+                cherry.SetActive(true);
+                print("น้");
                 CanvasGroupOn(mainGroup);
                 CanvasGroupOff(optionGroup);
                 CanvasGroupOff(stageGroup);
                 CanvasGroupOff(storeGroup);
-                cherry.SetActive(true);
+                //cherry.SetActive(true);
                 break;
             case BTNType.Quit:
                 Application.Quit();
