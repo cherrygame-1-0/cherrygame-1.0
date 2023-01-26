@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
 
     public int JumpPower;
     public int MoveSpeed;
-    public float runMoveSpeed;
+    public float runMoveSpeed =0.07f;
     private bool IsJumping;
 
     void Start()

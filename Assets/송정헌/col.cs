@@ -76,6 +76,8 @@ public class col : MonoBehaviour
 
 			}
 
+
+
 		}
 		if (other.gameObject.tag == "dieobject")
 
@@ -92,13 +94,21 @@ public class col : MonoBehaviour
 			obj1 = GameObject.Find("Canvas");
 			obj1.GetComponent<GameOverMenu>().Show();
 
+			if (other.gameObject.name == "bomb")
+			{
+				print("ÆøÅºÃæµ¹");
+				cube = other.transform.Find("DYNAMITE");
+				cube.gameObject.SetActive(true);
+			}
+
 		}
 
 		if (other.gameObject.tag == "goal") // °á½Â¼± ±¸Çö ÄÚµå
 
 		{
 			Debug.Log("Goal");
-
+			GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
+			GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
 			obj2 = GameObject.Find("Canvas");
 			obj2.GetComponent<NextStage>().Show();
 
