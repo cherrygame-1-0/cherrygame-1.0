@@ -19,6 +19,7 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     {
         defaultScale = buttonScale.localScale;
         cherry = GameObject.Find("chery");
+        cherry.SetActive(true);
     }
     bool isSound;
     public void OnBtnClick()
@@ -42,12 +43,14 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 CanvasGroupOff(mainGroup);
                 CanvasGroupOff(stageGroup);
                 CanvasGroupOff(storeGroup);
+                cherry.SetActive(false);
                 break;
             case BTNType.Store:
                 CanvasGroupOn(storeGroup);
                 CanvasGroupOff(mainGroup);
                 CanvasGroupOff(stageGroup);
                 CanvasGroupOff(optionGroup);
+                cherry.SetActive(false);
                 break;
             case BTNType.Sound:
                 if(isSound)
@@ -65,6 +68,7 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 CanvasGroupOff(optionGroup);
                 CanvasGroupOff(stageGroup);
                 CanvasGroupOff(storeGroup);
+                cherry.SetActive(true);
                 break;
             case BTNType.Quit:
                 Application.Quit();
