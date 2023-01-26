@@ -106,6 +106,11 @@ public class col : MonoBehaviour
 		if (other.gameObject.tag == "goal") // 결승선 구현 코드
 
 		{
+			animator.SetBool("Clear", true);
+			animator.SetBool("IsMove", false);
+			animator.SetBool("Pistol", false);
+
+
 			Debug.Log("Goal");
 			GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
 			GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
