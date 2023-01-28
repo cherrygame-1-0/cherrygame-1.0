@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class coindraw : MonoBehaviour
 {
     public static int? coin = 0;
-
+    Text v;
     private void Start()
     {
         coin = 0;
+        v = GetComponent<Text>();
     }
     private void Update()
     {
-        GetComponent<Text>().text = coin.ToString();
+        v.text = coindraw.coin.ToString();
     }
 }
