@@ -13,6 +13,6 @@ public class coindraw : MonoBehaviour
     }
     private void Update()
     {
-        GetComponent<Text>().text = coin.ToString();
+        //GetComponent<Text>().text = coin.ToString();
     }
 }
