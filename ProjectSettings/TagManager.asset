@@ -6,6 +6,10 @@ TagManager:
   tags:
   - object
   - dieobject
+  - goal
+  - bullet
+  - cherry
+  - level
   layers:
   - Default
   - TransparentFX

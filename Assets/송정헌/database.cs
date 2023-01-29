@@ -7,10 +7,21 @@ public class PlayerData
 {
     public int level;
     public int coin;
+    public int[] stagecoin = new int[30];
+
 
 }
 public class database : MonoBehaviour
 {
+    public static int asd = 1;
+
+
+
+    public int stage;
+    public int nowlevel = 0;
+    public int nowcoin;
+
+
     string path;
     string filename = "save";
 
@@ -20,14 +31,22 @@ public class database : MonoBehaviour
     {
         path = Application.persistentDataPath + "/";
     }
-    PlayerData nowPlayer = new PlayerData();
+    public PlayerData nowPlayer = new PlayerData();
 
 
     // Start is called before the first frame update
     void Start()
     {
-        nowPlayer.level = 5;
-        nowPlayer.coin = 0;
+        for(int i = 1; i< 30; i++)
+        {
+            nowPlayer.stagecoin[i] = 0;
+        }
+
+        nowlevel = 1;
+        nowcoin = 0;
+
+        nowPlayer.level = nowlevel;
+        nowPlayer.coin = nowcoin;
         print(path);
     }
 
@@ -47,14 +66,35 @@ public class database : MonoBehaviour
     {
         if (Input.GetKeyDown("s"))
         {
-            nowPlayer.level = nowPlayer.level + 1;
+            if(nowPlayer.level <= nowlevel){
+                nowPlayer.level = nowlevel;
+            }
+
+           
+            nowPlayer.coin = nowcoin;
+            nowPlayer.stagecoin[stage] = nowcoin;
             SaveData();
         }
 
         if (Input.GetKeyDown("l"))
         {
             LoadData();
-            print(nowPlayer.level);
+
+            print("level = " + nowPlayer.level);
+
+            for (int i = 1; i < 30; i++)
+            {
+                print("stage" + i + " 코인 = " + nowPlayer.stagecoin[i]);
+            }
+
+            for (int i = 1; i < 30; i++)
+            {
+                nowPlayer.stagecoin[0] = nowPlayer.stagecoin[0] + nowPlayer.stagecoin[i];
+            }
+            nowPlayer.coin = nowPlayer.stagecoin[0];
+            print("전체 코인 개수 = " + nowPlayer.stagecoin[0]);
+
+            //print(nowPlayer.stagecoin[1]);
 
         }
     }

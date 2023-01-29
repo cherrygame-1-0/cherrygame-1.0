@@ -20,6 +20,8 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
         defaultScale = buttonScale.localScale;
         cherry = GameObject.Find("chery");
         //cherry.SetActive(true);
+
+
     }
     bool isSound;
     public void OnBtnClick()
@@ -32,6 +34,7 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 break;
             case BTNType.Stage:
                 Debug.Log("스테이지 선택");
+                //print("레벨인식 " + GameObject.Find("datadase").GetComponent<database>().nowPlayer.level);
                 CanvasGroupOn(stageGroup);
                 CanvasGroupOff(optionGroup);
                 CanvasGroupOff(mainGroup);

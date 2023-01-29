@@ -4202,8 +4202,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1197854335}
   - component: {fileID: 1197854334}
+  - component: {fileID: 1197854336}
   m_Layer: 0
-  m_Name: Data
+  m_Name: datadase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4236,6 +4237,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1197854336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197854333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2b5f9e1d52e094094e94bf48fdc8df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: 0
+  nowlevel: 0
+  nowcoin: 0
 --- !u!1 &1204004398
 GameObject:
   m_ObjectHideFlags: 0
@@ -6396,6 +6412,7 @@ GameObject:
   - component: {fileID: 1731722957}
   - component: {fileID: 1731722956}
   - component: {fileID: 1731722958}
+  - component: {fileID: 1731722959}
   m_Layer: 5
   m_Name: StageMenu
   m_TagString: Untagged
@@ -6477,6 +6494,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1731722959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731722954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb96399df8b02f458ff521e4a0560fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1742180853
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,8 +9,8 @@ public class col : MonoBehaviour
 	private Animator animator;
 
 
-
-	GameObject honeey;
+    string playerstage = "0";
+    GameObject honeey;
 	GameObject ggun;
 	GameObject obj1;
 	GameObject obj2; // 다음 스테이지 넘어가려고
@@ -27,7 +27,15 @@ public class col : MonoBehaviour
 		print("start");
 		coindraw = FindObjectOfType<coindraw>();
 	}
-
+	private void OnTriggerEnter(Collider col)
+    {
+		if (col.tag == "level")
+		{
+			print(col.transform.GetChild(0).gameObject.name);
+			playerstage = col.transform.GetChild(0).gameObject.name;
+			
+		}
+	}
 	void OnCollisionEnter(Collision other)
 	{
 
@@ -73,7 +81,7 @@ public class col : MonoBehaviour
 				//coindraw.GetScore();
 				coindraw.coin += 1;
 				print("코인 획득");
-
+				
 			}
 
 
@@ -116,6 +124,12 @@ public class col : MonoBehaviour
 			GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
 			obj2 = GameObject.Find("Canvas");
 			obj2.GetComponent<NextStage>().Show();
+
+			GameObject.Find("datadase").GetComponent<database>().stage = int.Parse(playerstage);
+			GameObject.Find("datadase").GetComponent<database>().nowlevel = int.Parse(playerstage)+ 1;
+			GameObject.Find("datadase").GetComponent<database>().nowcoin = (int)coindraw.coin;
+
+			print("레벨인식 " + GameObject.Find("datadase").GetComponent<database>().nowPlayer.level);
 
 		}
 	}
