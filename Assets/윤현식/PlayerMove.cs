@@ -74,6 +74,11 @@ public class PlayerMove : MonoBehaviour
         print("전달받음");
         rigid.AddForce(Vector3.up * JumpPower * 2, ForceMode.Impulse);
     }
+
+    public void lowjump()
+    {
+        rigid.AddForce(Vector3.up * JumpPower * 1.4f, ForceMode.Impulse);
+    }
 }
 
 
