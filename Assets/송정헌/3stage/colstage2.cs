@@ -107,8 +107,9 @@ public class colstage2 : MonoBehaviour
 		{
 
 			if (GameObject.Find("playerbody").transform.Find("armor_grab").gameObject.activeSelf == true)
-			{
-				gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            {
+				print("???");
+                gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
 				Invoke("InvokeTest", 0.8f);
 

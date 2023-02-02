@@ -24,7 +24,7 @@ public class col : MonoBehaviour
 	coindraw coindraw;
 	void Start()
 	{
-
+		print("col ¿€µø«‘?");
 		print("start");
 		coindraw = FindObjectOfType<coindraw>();
 	}
