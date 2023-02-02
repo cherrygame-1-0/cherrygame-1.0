@@ -17,8 +17,9 @@ public class CameraMove : MonoBehaviour
  
 
         {
-            //transform.position = Vector3.MoveTowards(transform.position, destination, 0.3f);
-           // transform.rotation = Quaternion.Euler(30, 180, 0);
+
+            transform.position = Vector3.MoveTowards(transform.position, destination, 0.3f);
+            transform.rotation = Quaternion.Euler(30, 180, 0);
         }
         else
         {
