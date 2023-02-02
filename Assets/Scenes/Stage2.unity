@@ -17819,9 +17819,9 @@ GameObject:
   - component: {fileID: 640210412}
   - component: {fileID: 640210411}
   - component: {fileID: 640210410}
-  - component: {fileID: 640210409}
   - component: {fileID: 640210408}
   - component: {fileID: 640210407}
+  - component: {fileID: 640210413}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -17945,20 +17945,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &640210409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 640210406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5085ec85b98b1f9429e133f9387babff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetTransform: {fileID: 1466771604}
-  CameraOffset: {x: 0, y: 8, z: -10}
 --- !u!81 &640210410
 AudioListener:
   m_ObjectHideFlags: 0
@@ -18025,6 +18011,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &640210413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640210406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5632995d4033f9458c02a7d4c4ba7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 1466771604}
+  CameraOffset: {x: 0, y: 8, z: -10}
 --- !u!1001 &641573524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30887,7 +30887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c29aa6e4d34b1714dae4cdc09f35ee01, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -74.4782
+      value: -14.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c29aa6e4d34b1714dae4cdc09f35ee01, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39699,7 +39699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372286174}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.424912, y: 16.413666, z: 73.81849}
+  m_LocalPosition: {x: -5.424912, y: 16.413666, z: 69.6}
   m_LocalScale: {x: 1.0221612, y: 1.7966754, z: 1.3575456}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43644,7 +43644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpPower: 10
   MoveSpeed: 11
-  runMoveSpeed: 0.05
+  runMoveSpeed: 0.07
 --- !u!95 &1466771600
 Animator:
   serializedVersion: 4
@@ -55923,7 +55923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  enemyMoveSpeed: 50
+  enemyMoveSpeed: -10
   lemon: {fileID: 0}
 --- !u!136 &1862541638
 CapsuleCollider:

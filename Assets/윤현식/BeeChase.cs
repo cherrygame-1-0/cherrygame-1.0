@@ -23,26 +23,33 @@ public class BeeChase : MonoBehaviour
     {
 
 
-        //gun = GameObject.Find("playerRightHand").transform.Find("gun_grab");
         honey = GameObject.Find("playerRightHand").transform.Find("honey_grab");
 
         if (target != null)
         {
 
 
-            if (GameObject.Find("player").GetComponent<col2>().eathoney == true)
+            if (honey.gameObject.activeSelf == true)
             {
 
                 Vector3 dir = target.position - transform.position;
                 transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
                 transform.LookAt(transform.position + dir);
             }
-            else
-            {
-                Vector3 dir = target.position - transform.position;
-                transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
-                transform.LookAt(transform.position - dir);
-            }
+
+            //if (GameObject.Find("player").GetComponent<col2>().eathoney == true)
+            //{
+
+            //    Vector3 dir = target.position - transform.position;
+            //    transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
+            //    transform.LookAt(transform.position + dir);
+            //}
+            //else
+            //{
+            //    Vector3 dir = target.position - transform.position;
+            //    transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
+            //    transform.LookAt(transform.position - dir);
+            //}
         }
     }
     private void OnTriggerEnter(Collider col)
