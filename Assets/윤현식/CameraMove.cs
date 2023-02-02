@@ -11,7 +11,11 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         if(GameObject.Find("player").GetComponent<colstage2>().GoalCheck==true)
+=======
+        if(GameObject.Find("player").GetComponent<col2>().GoalCheck==true)
+>>>>>>> YHS_0202
         {
             transform.position = Vector3.MoveTowards(transform.position, destination, 0.3f);
             transform.rotation = Quaternion.Euler(30, 180, 0);
