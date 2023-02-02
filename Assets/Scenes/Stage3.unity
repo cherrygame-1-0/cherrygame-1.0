@@ -10054,7 +10054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpPower: 10
   MoveSpeed: 11
-  runMoveSpeed: 0.07
+  runMoveSpeed: 0.03
 --- !u!95 &451912368
 Animator:
   serializedVersion: 4
@@ -10145,21 +10145,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07d0a8c6ac7e1314db6e2f57f042aa99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 451912368}
-  GoalCheck: 0
-  anim: {fileID: 0}
---- !u!114 &451912375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451912362}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe9bd166e1141b46826fa8012734afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 451912368}
