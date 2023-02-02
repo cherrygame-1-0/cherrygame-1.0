@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class col : MonoBehaviour
+public class colstage2 : MonoBehaviour
 {
 
 	[SerializeField]
@@ -24,7 +24,7 @@ public class col : MonoBehaviour
 	coindraw coindraw;
 	void Start()
 	{
-
+		GameObject.Find("datadase").GetComponent<database>().Loadcall();
 		print("start");
 		coindraw = FindObjectOfType<coindraw>();
 	}
@@ -85,30 +85,58 @@ public class col : MonoBehaviour
 
 			}
 
+			if (other.gameObject.name == "armor")
+			{
+
+				print("¾Æ¸Ó");
+
+				cube.gameObject.SetActive(false);
+
+				cube = GameObject.Find("playerbody").transform.Find("armor_grab");
+
+				print("¾Æ¸Ó");
+				cube.gameObject.SetActive(true);
+
+
+			}
 
 
 		}
 		if (other.gameObject.tag == "dieobject")
 
 		{
-			GameObject.Find("Monster").GetComponent<Chase>().target = null;
 
-			GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
-			GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
-			animator.SetBool("Die", true);
-			Destroy(gameObject, 2);
-
-			Debug.Log("GameOver");
-
-			obj1 = GameObject.Find("Canvas");
-			obj1.GetComponent<GameOverMenu>().Show();
-
-			if (other.gameObject.name == "bomb")
+			if (GameObject.Find("playerbody").transform.Find("armor_grab").gameObject.activeSelf == true)
 			{
-				print("ÆøÅºÃæµ¹");
-				cube = other.transform.Find("DYNAMITE");
-				cube.gameObject.SetActive(true);
+				gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+				Invoke("InvokeTest", 0.8f);
+
 			}
+
+			else
+			{
+
+				GameObject.Find("Monster").GetComponent<Chase>().target = null;
+
+				GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
+				GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
+				animator.SetBool("Die", true);
+				Destroy(gameObject, 2);
+
+				Debug.Log("GameOver");
+
+				obj1 = GameObject.Find("Canvas");
+				obj1.GetComponent<GameOverMenu>().Show();
+
+				if (other.gameObject.name == "bomb")
+				{
+					print("ÆøÅºÃæµ¹");
+					cube = other.transform.Find("DYNAMITE");
+					cube.gameObject.SetActive(true);
+				}
+			}
+
 
 		}
 
@@ -132,6 +160,16 @@ public class col : MonoBehaviour
 
 			print("·¹º§ÀÎ½Ä " + GameObject.Find("datadase").GetComponent<database>().nowPlayer.level);
 
+			GameObject.Find("datadase").GetComponent<database>().Savecall();
+
 		}
+	}
+
+	void InvokeTest()
+	{
+		GameObject.Find("playerbody").transform.Find("armor_grab").gameObject.SetActive(false);
+		print("º¸È£¸·°¨¼Ò");
+		gameObject.GetComponent<Rigidbody>().isKinematic = false;
+
 	}
 }

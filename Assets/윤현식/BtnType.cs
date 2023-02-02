@@ -34,6 +34,8 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 break;
             case BTNType.Stage:
                 Debug.Log("스테이지 선택");
+                GameObject.Find("datadase").GetComponent<database>().Loadcall();
+                //GameObject.Find("datadase").GetComponent<database>().Loadcall();
                 //print("레벨인식 " + GameObject.Find("datadase").GetComponent<database>().nowPlayer.level);
                 CanvasGroupOn(stageGroup);
                 CanvasGroupOff(optionGroup);

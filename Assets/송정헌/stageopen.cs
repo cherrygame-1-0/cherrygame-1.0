@@ -9,6 +9,7 @@ public class stageopen : MonoBehaviour
     void Start()
     {
         //for (int i = 0; i < 10; i++);
+        GameObject.Find("datadase").GetComponent<database>().Loadcall();
         stagelevelopen = GameObject.Find("datadase").GetComponent<database>().nowPlayer.level;
         print(transform.GetChild(0));
         print(stagelevelopen);
@@ -17,15 +18,29 @@ public class stageopen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("m"))
+        if (Input.GetKeyDown("n"))
         {
-            stagelevelopen = GameObject.Find("datadase").GetComponent<database>().nowPlayer.level;
-            print(stagelevelopen);
+            GameObject.Find("datadase").GetComponent<database>().nowPlayer.level = 10;
             for (int i = stagelevelopen; i < 3; i++)
             {
-                transform.GetChild(i).gameObject.SetActive(false);
+                transform.GetChild(i).gameObject.SetActive(true);
             }
+        }
 
+        if (Input.GetKeyDown("k"))
+        {
+            GameObject.Find("datadase").GetComponent<database>().nowPlayer.level = 10;
+            for (int i = stagelevelopen; i < 3; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(true);
+            }
+        }
+
+        stagelevelopen = GameObject.Find("datadase").GetComponent<database>().nowPlayer.level;
+        //print(stagelevelopen);
+        for (int i = stagelevelopen; i < 3; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
         }
 
     }

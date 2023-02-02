@@ -64,6 +64,17 @@ public class database : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("n"))
+        {
+            nowPlayer.level = 1;
+            nowPlayer.coin = 0;
+            for (int i = 1; i < 30; i++)
+            {
+                nowPlayer.stagecoin[i] = 0;
+            }
+            SaveData();
+        }
+
         if (Input.GetKeyDown("s"))
         {
             if(nowPlayer.level <= nowlevel){
@@ -97,6 +108,39 @@ public class database : MonoBehaviour
             //print(nowPlayer.stagecoin[1]);
 
         }
+    }
+    public void Savecall()
+    {
+        if (nowPlayer.level <= nowlevel)
+        {
+            nowPlayer.level = nowlevel;
+        }
+
+
+        nowPlayer.coin = nowcoin;
+        nowPlayer.stagecoin[stage] = nowcoin;
+        SaveData();
+    }
+
+    public void Loadcall()
+    {
+        LoadData();
+
+        print("level = " + nowPlayer.level);
+
+        for (int i = 1; i < 30; i++)
+        {
+            print("stage" + i + " 코인 = " + nowPlayer.stagecoin[i]);
+        }
+
+        for (int i = 1; i < 30; i++)
+        {
+            nowPlayer.stagecoin[0] = nowPlayer.stagecoin[0] + nowPlayer.stagecoin[i];
+        }
+        nowPlayer.coin = nowPlayer.stagecoin[0];
+        print("전체 코인 개수 = " + nowPlayer.stagecoin[0]);
+
+        //print(nowPlayer.stagecoin[1]);
     }
 
 }

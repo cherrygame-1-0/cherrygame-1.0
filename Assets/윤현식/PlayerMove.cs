@@ -30,6 +30,8 @@ public class PlayerMove : MonoBehaviour
 
     void Move()
     {
+
+
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 

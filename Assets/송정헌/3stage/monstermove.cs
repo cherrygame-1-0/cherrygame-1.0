@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chase : MonoBehaviour
+public class monstermove : MonoBehaviour
 {
     public Transform target = null;
     public float enemyMoveSpeed;
@@ -33,13 +33,13 @@ public class Chase : MonoBehaviour
         honey = GameObject.Find("playerRightHand").transform.Find("honey_grab");
 
 
-
+        
 
         if (target != null)
         {
 
 
-            if (gun.gameObject.activeSelf == true || honey.gameObject.activeSelf == true)
+            if (gun.gameObject.activeSelf == true || honey.gameObject.activeSelf == true || true)
             {
 
                 Vector3 dir = target.position - transform.position;
@@ -54,12 +54,12 @@ public class Chase : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         print("stop");
-        
+        target = null;
     }
     private void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player")
-        {   
+        {
             target = col.gameObject.transform;
             animator.SetBool("Target_Found", true);
             Debug.Log("Box Enemy:Target found");
@@ -71,5 +71,4 @@ public class Chase : MonoBehaviour
     {
         print("zzz");
     }
-
 }
