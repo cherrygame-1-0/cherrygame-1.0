@@ -43617,6 +43617,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 4734470155753252088, guid: 4d87c74a0b321ea4196a834e3922f1f7, type: 3}
   spot: {fileID: 30475551}
+  Shot: 0
+  Count: 0
 --- !u!114 &1466771598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43630,6 +43632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1466771600}
+  jumpBtn: 0
 --- !u!114 &1466771599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43644,7 +43647,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpPower: 10
   MoveSpeed: 11
-  runMoveSpeed: 0.07
+  runMoveSpeed: 20
+  jumpBtn: 0
 --- !u!95 &1466771600
 Animator:
   serializedVersion: 4

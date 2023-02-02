@@ -7400,7 +7400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpPower: 10
   MoveSpeed: 11
-  runMoveSpeed: 15
+  runMoveSpeed: 20
   jumpBtn: 0
 --- !u!114 &233470366
 MonoBehaviour:
