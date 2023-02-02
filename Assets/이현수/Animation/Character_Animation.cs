@@ -9,8 +9,8 @@ public class Character_Animation : MonoBehaviour
 
     float timer;
     int waitingTime;
+    public bool jumpBtn = false;
 
-   
 
     // Start is called before the first frame update
     void Start()
@@ -24,19 +24,23 @@ public class Character_Animation : MonoBehaviour
     void Update()
     {   //public Animator CHR_ANIM;
         //CHR_ANIM.SetTrigger("PadeOut");
+        jumpBtn = GameObject.Find("Canvas").GetComponent<Jump_Btn>().inputJump;
 
         animator.SetBool("IsMove", true);
         
 
+        
+
+        jump();
+        
+
+    }
+    void jump()
+    {
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             animator.SetBool("Jump", true);
-
-
-
-
-            
-                
         }
 
         if (Input.GetKeyUp(KeyCode.C))
@@ -44,6 +48,15 @@ public class Character_Animation : MonoBehaviour
             animator.SetBool("Jump", false);
         }
 
+        if (jumpBtn == true)
+        {
+            animator.SetBool("Jump", true);
+        }
+
+        if (jumpBtn == false)
+        {
+            animator.SetBool("Jump", false);
+        }
 
     }
 }

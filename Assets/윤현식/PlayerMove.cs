@@ -10,11 +10,13 @@ public class PlayerMove : MonoBehaviour
 
     public int JumpPower;
     public int MoveSpeed;
-    public float runMoveSpeed =0.07f;
+    public float runMoveSpeed;
     private bool IsJumping;
+    public bool jumpBtn = false;
 
     void Start()
     {
+        Application.targetFrameRate = 240;
         obj = GameObject.Find("Monster");
         obj.GetComponent<Chase>().test();
         rigid = GetComponent<Rigidbody>();    
@@ -23,7 +25,8 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        
+        jumpBtn = GameObject.Find("Canvas").GetComponent<Jump_Btn>().inputJump;
+        //print(jumpBtn);
         Move();
         Jump();
     }
@@ -35,7 +38,8 @@ public class PlayerMove : MonoBehaviour
 
 
         transform.Translate((new Vector3(h, 0, 0) * MoveSpeed) * Time.deltaTime);
-        transform.Translate(Vector3.forward * runMoveSpeed);
+        //transform.Translate(((new Vector3(0, 0, 10) * runMoveSpeed * Time.deltaTime)));
+        transform.Translate((Vector3.forward * runMoveSpeed * Time.deltaTime));
 
     }
 
@@ -58,6 +62,26 @@ public class PlayerMove : MonoBehaviour
                 return;
             }
         }
+
+        if (jumpBtn == true)
+        {
+            print("ss");
+            if (!IsJumping)
+            {
+                IsJumping = true;
+                rigid.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
+
+            }
+
+            else
+            {
+
+                return;
+            }
+        }
+
+
+
     }
 
     private void OnCollisionEnter(Collision collision)
