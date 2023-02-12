@@ -37627,8 +37627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpPower: 10
-  MoveSpeed: 8
-  runMoveSpeed: 15
+  MoveSpeed: 11
+  runMoveSpeed: 8
   jumpBtn: 0
 --- !u!114 &1004348571
 MonoBehaviour:

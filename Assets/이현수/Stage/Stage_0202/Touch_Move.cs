@@ -10,7 +10,7 @@ public class Touch_Move : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Application.platform == RuntimePlatform.Android)
         {
