@@ -23,7 +23,7 @@ public class PlayerMove : MonoBehaviour
         IsJumping = false;                     
     }
 
-    void Update()
+    void FixedUpdate()
     {
         jumpBtn = GameObject.Find("Canvas").GetComponent<Jump_Btn>().inputJump;
         //print(jumpBtn);
@@ -41,6 +41,7 @@ public class PlayerMove : MonoBehaviour
 
         transform.Translate((new Vector3(h, 0, 0) * MoveSpeed) * Time.deltaTime);
         //transform.Translate(((new Vector3(0, 0, 10) * runMoveSpeed * Time.deltaTime)));
+
         transform.Translate((Vector3.forward * runMoveSpeed * Time.deltaTime));
 
     }

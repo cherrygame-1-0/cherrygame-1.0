@@ -32,7 +32,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
 
-        GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0.07f;
+        GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 8f;
         GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 11;
     }
 

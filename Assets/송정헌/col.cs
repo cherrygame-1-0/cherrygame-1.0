@@ -132,6 +132,8 @@ public class col : MonoBehaviour
 
 			print("레벨인식 " + GameObject.Find("datadase").GetComponent<database>().nowPlayer.level);
 
+			GameObject.Find("datadase").GetComponent<database>().Savecall();
+
 		}
 	}
 }

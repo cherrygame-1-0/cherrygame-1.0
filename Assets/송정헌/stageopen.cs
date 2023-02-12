@@ -8,6 +8,7 @@ public class stageopen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         //for (int i = 0; i < 10; i++);
         GameObject.Find("datadase").GetComponent<database>().Loadcall();
         stagelevelopen = GameObject.Find("datadase").GetComponent<database>().nowPlayer.level;

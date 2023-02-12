@@ -2,21 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class col2 : MonoBehaviour
+public class colstage3 : MonoBehaviour
 {
-
 	[SerializeField]
 	private Animator animator;
 
 
 	string playerstage = "0";
 	GameObject honeey;
-	GameObject leemon;
 	GameObject ggun;
 	GameObject obj1;
 	GameObject obj2; // ´ÙÀ½ ½ºÅ×ÀÌÁö ³Ñ¾î°¡·Á°í
 	public bool GoalCheck = false;
-	public bool eathoney = false;
 	int result = 0;
 
 	private Transform cube;
@@ -26,7 +23,7 @@ public class col2 : MonoBehaviour
 	coindraw coindraw;
 	void Start()
 	{
-
+		GameObject.Find("datadase").GetComponent<database>().Loadcall();
 		print("start");
 		coindraw = FindObjectOfType<coindraw>();
 	}
@@ -45,35 +42,34 @@ public class col2 : MonoBehaviour
 		if (other.gameObject.tag == "object")
 		{
 
-			//cube = GameObject.Find("playerRightHand").transform.Find("gun_grab");
+			cube = GameObject.Find("playerRightHand").transform.Find("gun_grab");
 
 
 
 			Destroy(other.gameObject);
 
 
-			if (other.gameObject.name == "lemon")
+			if (other.gameObject.name == "gun")
 			{
 				honeey = GameObject.Find("honey");
 				Destroy(honeey);
 
-				//cube.gameObject.SetActive(false);
+				cube.gameObject.SetActive(false);
 
-				//cube = GameObject.Find("playerRightHand").transform.Find("gun_grab");
+				cube = GameObject.Find("playerRightHand").transform.Find("gun_grab");
 
 				print("ÃÑ È¹µæ");
-				//cube.gameObject.SetActive(true);
-				//animator.SetBool("Pistol", true);
+				cube.gameObject.SetActive(true);
+				animator.SetBool("Pistol", true);
 
 			}
 
 			if (other.gameObject.name == "honey")
 			{
-				eathoney = true;
-				leemon = GameObject.Find("lemon");
-				Destroy(leemon);
+				ggun = GameObject.Find("gun");
+				Destroy(ggun);
 
-				//cube.gameObject.SetActive(false);
+				cube.gameObject.SetActive(false);
 
 				cube = GameObject.Find("playerRightHand").transform.Find("honey_grab");
 				print("²Ü È¹µæ");
@@ -88,30 +84,59 @@ public class col2 : MonoBehaviour
 
 			}
 
+			if (other.gameObject.name == "armor")
+			{
+
+				print("¾Æ¸Ó");
+
+				cube.gameObject.SetActive(false);
+
+				cube = GameObject.Find("playerbody").transform.Find("armor_grab");
+
+				print("¾Æ¸Ó");
+				cube.gameObject.SetActive(true);
+
+
+			}
 
 
 		}
 		if (other.gameObject.tag == "dieobject")
 
 		{
-			GameObject.Find("Monster").GetComponent<Chase>().target = null;
 
-			GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
-			GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
-			animator.SetBool("Die", true);
-			Destroy(gameObject, 2);
-
-			Debug.Log("GameOver");
-
-			obj1 = GameObject.Find("Canvas");
-			obj1.GetComponent<GameOverMenu>().Show();
-
-			if (other.gameObject.name == "bomb")
+			if (GameObject.Find("playerbody").transform.Find("armor_grab").gameObject.activeSelf == true)
 			{
-				print("ÆøÅºÃæµ¹");
-				cube = other.transform.Find("DYNAMITE");
-				cube.gameObject.SetActive(true);
+				print("???");
+				gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+				Invoke("InvokeTest", 0.8f);
+
 			}
+
+			else
+			{
+
+				GameObject.Find("Monster").GetComponent<Chase>().target = null;
+
+				GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
+				GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
+				animator.SetBool("Die", true);
+				Destroy(gameObject, 2);
+
+				Debug.Log("GameOver");
+
+				obj1 = GameObject.Find("Canvas");
+				obj1.GetComponent<GameOverMenu>().Show();
+
+				if (other.gameObject.name == "bomb")
+				{
+					print("ÆøÅºÃæµ¹");
+					cube = other.transform.Find("DYNAMITE");
+					cube.gameObject.SetActive(true);
+				}
+			}
+
 
 		}
 
@@ -136,7 +161,15 @@ public class col2 : MonoBehaviour
 			print("·¹º§ÀÎ½Ä " + GameObject.Find("datadase").GetComponent<database>().nowPlayer.level);
 
 			GameObject.Find("datadase").GetComponent<database>().Savecall();
+
 		}
 	}
 
+	void InvokeTest()
+	{
+		GameObject.Find("playerbody").transform.Find("armor_grab").gameObject.SetActive(false);
+		print("º¸È£¸·°¨¼Ò");
+		gameObject.GetComponent<Rigidbody>().isKinematic = false;
+
+	}
 }

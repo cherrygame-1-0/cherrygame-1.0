@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class monstermove : MonoBehaviour
+public class babymonster : MonoBehaviour
 {
     public Transform target = null;
     public float enemyMoveSpeed;
 
-
+    
     float timer;
     int waitingTime;
 
@@ -33,7 +33,7 @@ public class monstermove : MonoBehaviour
         honey = GameObject.Find("playerRightHand").transform.Find("honey_grab");
 
 
-        
+
 
         if (target != null)
         {
@@ -45,22 +45,30 @@ public class monstermove : MonoBehaviour
                 Vector3 dir = target.position - transform.position;
                 transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
                 transform.LookAt(transform.position + dir);
+
             }
         }
+
+        
 
 
 
     }
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "bullet")
-        {
-            print("go");
-        }
-        else
+        if (other.gameObject.tag == "Player")
         {
             print("stop");
             target = null;
+        }
+
+        if (other.gameObject.tag == "bullet")
+        {
+            print("bullet");
+            target = null;
+
+            transform.Rotate(new Vector3(0, 0, 100));
+            Destroy(gameObject, 2);
         }
 
     }

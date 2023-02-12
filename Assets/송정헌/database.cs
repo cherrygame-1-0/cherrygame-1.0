@@ -75,6 +75,18 @@ public class database : MonoBehaviour
             SaveData();
         }
 
+        if (Input.GetKeyDown("k"))
+        {
+            nowPlayer.level = 3;
+            nowPlayer.coin = 0;
+            for (int i = 1; i < 30; i++)
+            {
+                nowPlayer.stagecoin[i] = 0;
+            }
+            SaveData();
+        }
+
+
         if (Input.GetKeyDown("s"))
         {
             if(nowPlayer.level <= nowlevel){
