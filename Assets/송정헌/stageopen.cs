@@ -19,19 +19,19 @@ public class stageopen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("n"))
-        {
-            GameObject.Find("datadase").GetComponent<database>().nowPlayer.level = 10;
-            for (int i = stagelevelopen; i < 3; i++)
-            {
-                transform.GetChild(i).gameObject.SetActive(true);
-            }
-        }
+        //if (Input.GetKeyDown("n"))
+        //{
+        //    GameObject.Find("datadase").GetComponent<database>().nowPlayer.level = 10;
+        //    for (int i = stagelevelopen; i < 10; i++)
+        //    {
+        //        transform.GetChild(i).gameObject.SetActive(true);
+        //    }
+        //}
 
         if (Input.GetKeyDown("k"))
         {
             GameObject.Find("datadase").GetComponent<database>().nowPlayer.level = 10;
-            for (int i = stagelevelopen; i < 3; i++)
+            for (int i = stagelevelopen; i < 10; i++)
             {
                 transform.GetChild(i).gameObject.SetActive(true);
             }
@@ -39,7 +39,7 @@ public class stageopen : MonoBehaviour
 
         stagelevelopen = GameObject.Find("datadase").GetComponent<database>().nowPlayer.level;
         //print(stagelevelopen);
-        for (int i = stagelevelopen; i < 3; i++)
+        for (int i = stagelevelopen; i < 10; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }

@@ -8711,7 +8711,6 @@ RectTransform:
   - {fileID: 1476626194}
   - {fileID: 205941155}
   - {fileID: 1680852628}
-  - {fileID: 1833397690}
   - {fileID: 903705875}
   - {fileID: 1681772586}
   - {fileID: 1360794136}
@@ -8719,6 +8718,7 @@ RectTransform:
   - {fileID: 2144958863}
   - {fileID: 1880969294}
   - {fileID: 889260296}
+  - {fileID: 1833397690}
   m_Father: {fileID: 1337932308}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -77,7 +77,7 @@ public class database : MonoBehaviour
 
         if (Input.GetKeyDown("k"))
         {
-            nowPlayer.level = 3;
+            nowPlayer.level = 10;
             nowPlayer.coin = 0;
             for (int i = 1; i < 30; i++)
             {
