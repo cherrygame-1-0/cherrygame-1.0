@@ -8,7 +8,7 @@ public class Col_ST10 : MonoBehaviour
 	[SerializeField]
 	private Animator animator;
 
-
+	public int ColorNum = 0;
 
 	string playerstage = "0";
 	GameObject honeey;
@@ -29,6 +29,10 @@ public class Col_ST10 : MonoBehaviour
 	coindraw coindraw;
 	void Start()
 	{
+		cube = GameObject.Find("mixamorig:RightToeBase2").transform.Find("R_Foot");
+		cube2 = GameObject.Find("mixamorig:LeftToeBase3").transform.Find("L_Foot");
+
+
 		print("col ¿€µø«‘?");
 		print("start");
 		coindraw = FindObjectOfType<coindraw>();
@@ -48,14 +52,18 @@ public class Col_ST10 : MonoBehaviour
 		if (other.gameObject.tag == "object")
 		{
 
-			cube = GameObject.Find("mixamorig:RightToeBase").transform.Find("R_Foot");
-			cube2 = GameObject.Find("mixamorig:LeftToeBase").transform.Find("L_Foot");
+			cube = GameObject.Find("mixamorig:RightToeBase2").transform.Find("R_Foot");
+			cube2 = GameObject.Find("mixamorig:LeftToeBase3").transform.Find("L_Foot");
+
+			
+
+
 			Destroy(other.gameObject);
 
 
 			if (other.gameObject.name == "Jump")
 			{
-				G_Btn = GameObject.Find("Canvas").transform.Find("Action_B").gameObject;
+				G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
 				G_Btn.gameObject.SetActive(true);
 
 
@@ -65,7 +73,10 @@ public class Col_ST10 : MonoBehaviour
 				ggun2 = GameObject.Find("Power");
 				Destroy(honeey);
 
-				
+				cube.gameObject.SetActive(true);
+				cube2.gameObject.SetActive(true);
+
+				ColorNum = 2;
 
 				print("¡°«¡ »πµÊ");
 				
@@ -83,6 +94,10 @@ public class Col_ST10 : MonoBehaviour
 				ggun2 = GameObject.Find("Power");
 				Destroy(honeey);
 
+				cube.gameObject.SetActive(true);
+				cube2.gameObject.SetActive(true);
+
+				ColorNum = 1;
 
 				print("Ω∫««µÂ »πµÊ");
 				
@@ -100,6 +115,10 @@ public class Col_ST10 : MonoBehaviour
 				ggun2 = GameObject.Find("Speed");
 				Destroy(honeey);
 
+				cube.gameObject.SetActive(true);
+				cube2.gameObject.SetActive(true);
+
+				ColorNum = 0;
 			}
 
 
