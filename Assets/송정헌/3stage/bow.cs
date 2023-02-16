@@ -23,6 +23,8 @@ public class bow : MonoBehaviour
         v.z -= delta * (Time.time * speed);
 
         transform.position = v;
+
+        //transform.Rotate(new Vector3(0 , 100 * Time.deltaTime, 0));
     }
 
 }

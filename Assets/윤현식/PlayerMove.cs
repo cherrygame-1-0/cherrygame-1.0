@@ -51,7 +51,7 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            print("ss");
+
             if (!IsJumping)
             {
                 IsJumping = true;
@@ -68,7 +68,7 @@ public class PlayerMove : MonoBehaviour
 
         if (jumpBtn == true)
         {
-            print("ss");
+
             if (!IsJumping)
             {
                 IsJumping = true;
@@ -99,12 +99,14 @@ public class PlayerMove : MonoBehaviour
     public void highjump()
     {
         print("전달받음");
-        rigid.AddForce(Vector3.up * JumpPower * 2, ForceMode.Impulse);
+        rigid.AddForce(Vector3.up * JumpPower * 2.2f, ForceMode.Impulse);
+        IsJumping = true;
     }
 
     public void lowjump()
     {
-        rigid.AddForce(Vector3.up * JumpPower * 1.4f, ForceMode.Impulse);
+        rigid.AddForce(Vector3.up * JumpPower * 1.6f, ForceMode.Impulse);
+        IsJumping = true;
     }
 }
 

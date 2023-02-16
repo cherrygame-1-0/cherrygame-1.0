@@ -89,14 +89,9 @@ public class database : MonoBehaviour
 
         if (Input.GetKeyDown("s"))
         {
-            if(nowPlayer.level <= nowlevel){
-                nowPlayer.level = nowlevel;
-            }
-
-           
-            nowPlayer.coin = nowcoin;
-            nowPlayer.stagecoin[stage] = nowcoin;
-            SaveData();
+            print("s누름");
+            Savecall();
+            print("?");
         }
 
         if (Input.GetKeyDown("l"))
@@ -127,7 +122,8 @@ public class database : MonoBehaviour
         {
             nowPlayer.level = nowlevel;
         }
-
+        print("@@@@@@@@@@@@@저장중@@@@@@@@@@@@@@@");
+        print(nowlevel + "레벨 저장됨");
 
         nowPlayer.coin = nowcoin;
         nowPlayer.stagecoin[stage] = nowcoin;
