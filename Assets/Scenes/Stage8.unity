@@ -11090,7 +11090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1264847793031430343, guid: c29aa6e4d34b1714dae4cdc09f35ee01, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -40.7
+      value: 110.3
       objectReference: {fileID: 0}
     - target: {fileID: -585895225729332774, guid: c29aa6e4d34b1714dae4cdc09f35ee01, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -19155,6 +19155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   enemyMoveSpeed: -15
+  Mondie: 0
   animator: {fileID: 840254357}
 --- !u!4 &841339578 stripped
 Transform:

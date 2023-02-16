@@ -14,11 +14,9 @@ public class cameramove2 : MonoBehaviour
         //if(GameObject.Find("player").GetComponent<colstage2>().GoalCheck==true)
 
         if (GameObject.Find("player").GetComponent<col2>().GoalCheck==true)
-
-
         {
-            //transform.position = Vector3.MoveTowards(transform.position, destination, 0.3f);
-            // transform.rotation = Quaternion.Euler(30, 180, 0);
+            transform.position = Vector3.MoveTowards(transform.position, destination, 0.3f);
+            transform.rotation = Quaternion.Euler(30, 180, 0);
         }
         else
         {

@@ -18,8 +18,12 @@ public class highjump : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.tag == "Player")
+        {
+            GameObject.Find("player").GetComponent<PlayerMove>().highjump();
 
-        GameObject.Find("player").GetComponent<PlayerMove>().highjump();
+        }
+
 
     }
 

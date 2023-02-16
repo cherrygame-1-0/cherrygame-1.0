@@ -6,8 +6,11 @@ public class LowJump : MonoBehaviour
 {
     void OnCollisionEnter(Collision other)
     {
+        if (other . gameObject.tag == "Player")
+        {
+            GameObject.Find("player").GetComponent<PlayerMove>().lowjump();
 
-        GameObject.Find("player").GetComponent<PlayerMove>().lowjump();
+        }
 
     }
 }

@@ -59,7 +59,7 @@ public class bombdrawing : MonoBehaviour
                 cube.gameObject.SetActive(false);
 
                 GameObject.Find("Monster").GetComponent<monstermove>().target = obj.transform;
-
+                GameObject.Find("Monster").GetComponent<monstermove>().target = obj.transform;
 
             }
 
