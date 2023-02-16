@@ -7,6 +7,7 @@ public class monstermove : MonoBehaviour
     public Transform target = null;
     public float enemyMoveSpeed;
 
+    public bool Mondie = false;
 
     float timer;
     int waitingTime;
@@ -47,7 +48,11 @@ public class monstermove : MonoBehaviour
                 transform.LookAt(transform.position + dir);
             }
         }
-
+        if (Mondie == true)
+        {
+            transform.Rotate(new Vector3(0, 0, 100));
+            Destroy(gameObject, 1);
+        }
 
 
     }

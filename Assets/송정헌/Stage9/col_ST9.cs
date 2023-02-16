@@ -14,6 +14,7 @@ public class col_ST9 : MonoBehaviour
 	GameObject ggun;
 	GameObject obj1;
 	GameObject obj2; // ´ÙÀ½ ½ºÅ×ÀÌÁö ³Ñ¾î°¡·Á°í
+	GameObject G_Btn;
 	public bool GoalCheck = false;
 	int result = 0;
 
@@ -52,6 +53,10 @@ public class col_ST9 : MonoBehaviour
 
 			if (other.gameObject.name == "gun")
 			{
+
+				G_Btn = GameObject.Find("Canvas").transform.Find("Action_B").gameObject;
+				G_Btn.gameObject.SetActive(true);
+
 				honeey = GameObject.Find("honey");
 				Destroy(honeey);
 
@@ -67,14 +72,37 @@ public class col_ST9 : MonoBehaviour
 
 			if (other.gameObject.name == "honey")
 			{
-				ggun = GameObject.Find("gun");
-				Destroy(ggun);
 
-				cube.gameObject.SetActive(false);
+				G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
 
-				cube = GameObject.Find("playerRightHand").transform.Find("honey_grab");
-				print("²Ü È¹µæ");
-				cube.gameObject.SetActive(true);
+				G_Btn.gameObject.SetActive(true);
+
+				cube = GameObject.Find("playerRightHand").transform.Find("bomb_grab");
+
+				if (cube.gameObject.activeSelf == true)
+				{
+					print("??");
+					cube.gameObject.SetActive(false);
+					cube = GameObject.Find("playerRightHand").transform.Find("Hbomb_grab");
+
+					cube.gameObject.SetActive(true);
+				}
+
+				else
+				{
+					G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
+					G_Btn.gameObject.SetActive(true);
+
+
+					ggun = GameObject.Find("gun");
+					Destroy(ggun);
+
+					cube.gameObject.SetActive(false);
+
+					cube = GameObject.Find("playerRightHand").transform.Find("honey_grab");
+					print("²Ü È¹µæ");
+					cube.gameObject.SetActive(true);
+				}
 			}
 
 			if (other.gameObject.name == "coin")
@@ -108,10 +136,30 @@ public class col_ST9 : MonoBehaviour
 
 			if (GameObject.Find("playerbody").transform.Find("armor_grab").gameObject.activeSelf == true)
 			{
-				print("???");
-				gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
-				Invoke("InvokeTest", 0.8f);
+				if (other.gameObject.name == "bomb")
+                {
+					cube = GameObject.Find("playerRightHand").transform.Find("bomb_grab");
+
+					print("ÆøÅºÁÝ±â");
+					cube.gameObject.SetActive(true);
+
+					gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+					Invoke("InvokeTest", 0.8f);
+
+
+					Destroy(other.gameObject, 0.1f);
+
+                }
+                else
+                {
+					print("???");
+					gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+					Invoke("InvokeTest", 0.8f);
+				}
+
 
 			}
 

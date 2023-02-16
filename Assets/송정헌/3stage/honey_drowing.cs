@@ -19,7 +19,7 @@ public class honey_drowing : MonoBehaviour
     void Update()
     {
 
-        cube = GameObject.Find("playerRightHand").transform.Find("honey_grab");
+ cube = GameObject.Find("playerRightHand").transform.Find("honey_grab");
 
         if (cube.gameObject.activeSelf == true)
         {
