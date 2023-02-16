@@ -8,7 +8,10 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     //float asd = 0.07;
     public GameObject pauseMenuUI;
-    // Update is called once per frame
+    public GameObject num3;
+    public GameObject num2;
+    public GameObject num1;
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -17,7 +20,8 @@ public class PauseMenu : MonoBehaviour
 
             if (GameIsPaused)
             {
-                Resume();
+                //Resume();
+                CallResume();
             }
             else
             {
@@ -26,14 +30,49 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void Resume()
+    public void CallResume()
     {
-        pauseMenuUI.SetActive(false);
+        StartCoroutine(ShowNumber3());
+    }
+    IEnumerator Resume()
+    {
+        
         Time.timeScale = 1f;
         GameIsPaused = false;
 
         GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 8f;
         GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 11;
+
+        yield return null;
+    }
+
+    IEnumerator ShowNumber3()
+    {
+        Debug.Log("3");
+        pauseMenuUI.SetActive(false);
+        num3.SetActive(true);
+        yield return new WaitForSecondsRealtime(1.0f);
+        num3.SetActive(false);
+        StartCoroutine(ShowNumber2());
+    }
+
+    IEnumerator ShowNumber2()
+    {
+        Debug.Log("2");
+        num2.SetActive(true);
+        yield return new WaitForSecondsRealtime(1.0f);
+        num2.SetActive(false);
+
+        StartCoroutine(ShowNumber1());
+    }
+
+    IEnumerator ShowNumber1()
+    {
+        Debug.Log("1");
+        num1.SetActive(true);
+        yield return new WaitForSecondsRealtime(1.0f);
+        num1.SetActive(false);
+        StartCoroutine(Resume());
     }
 
     void Pause()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeeChase : MonoBehaviour
+public class Stage8_Bee : MonoBehaviour
 {
     public Transform target = null;
     public float enemyMoveSpeed;
@@ -13,12 +13,6 @@ public class BeeChase : MonoBehaviour
 
     private Transform honey;
 
-    void start()
-    {
-
-        print("Ω√¿€");
-    }
-
     void Update()
     {
 
@@ -28,27 +22,12 @@ public class BeeChase : MonoBehaviour
         if (target != null)
         {
 
-
-            //if (honey.gameObject.activeSelf == true)
-            //{
-
-            //    Vector3 dir = target.position - transform.position;
-            //    transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
-            //    transform.LookAt(transform.position + dir);
-            //}
-
-            if (GameObject.Find("player").GetComponent<col2>().eathoney == true)
+            if (GameObject.Find("player").GetComponent<ColStage8>().eathoney == true)
             {
 
                 Vector3 dir = target.position - transform.position;
                 transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
                 transform.LookAt(transform.position + dir);
-            }
-            else
-            {
-                Vector3 dir = target.position - transform.position;
-                transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
-                transform.LookAt(transform.position - dir);
             }
         }
     }
@@ -61,10 +40,4 @@ public class BeeChase : MonoBehaviour
 
         }
     }
-
-    public void test()
-    {
-        print("zzz");
-    }
-
 }
