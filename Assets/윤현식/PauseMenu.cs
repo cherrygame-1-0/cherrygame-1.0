@@ -33,7 +33,6 @@ public class PauseMenu : MonoBehaviour
     public void CallResume()
     {
         StartCoroutine(ShowNumber3());
-        //StartCoroutine(Resume());
     }
     IEnumerator Resume()
     {
@@ -75,16 +74,6 @@ public class PauseMenu : MonoBehaviour
         num1.SetActive(false);
         StartCoroutine(Resume());
     }
-
-    //public void Resume()
-    //{
-    //    pauseMenuUI.SetActive(false);
-    //    Time.timeScale = 1f;
-    //    GameIsPaused = false;
-
-    //    GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 8f;
-    //    GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 11;
-    //}
 
     void Pause()
     {

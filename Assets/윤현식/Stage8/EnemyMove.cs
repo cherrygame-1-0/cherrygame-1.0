@@ -4,23 +4,10 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    public Rigidbody cube;
 
-    private void Start()
+    private void Update()
     {
-        StartCoroutine(MoveObject());
+        transform.Rotate(new Vector3(0, 50f*Time.deltaTime, 0));
     }
-    IEnumerator MoveObject()
-    {
-        cube = GetComponent<Rigidbody>();
 
-        while(true)
-        {
-            float dir1 = Random.Range(-1f, 1f);
-            float dir2 = Random.Range(34f, 35f);
-
-            yield return new WaitForSeconds(2);
-            cube.velocity = new Vector3(dir1, 2, dir2);
-        }
-    }
 }
