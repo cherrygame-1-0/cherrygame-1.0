@@ -5,6 +5,8 @@ using UnityEngine;
 public class bombstart : MonoBehaviour
 {
     private Transform cube;
+    private GameObject cube1;
+    public bool now = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,18 @@ public class bombstart : MonoBehaviour
     {
         if (other.gameObject.tag == "dieobject")
         {
+
+
+
             cube = gameObject.transform.Find("DYNAMITE");
             cube.gameObject.SetActive(true);
+
+
+
+            cube1 = GameObject.Find("Trap_bomb");
+
+            cube1.gameObject.SetActive(false);
+
 
             GameObject.Find("Monster").GetComponent<monstermove>().Mondie = true;
 
@@ -34,8 +46,9 @@ public class bombstart : MonoBehaviour
             GameObject.Find("babyMonster").GetComponent<babymonster>().target = null;
 
 
-            Destroy(gameObject, 0.3f);
+            Destroy(gameObject, 0.4f);
 
+            now = false;
         }
 
     }

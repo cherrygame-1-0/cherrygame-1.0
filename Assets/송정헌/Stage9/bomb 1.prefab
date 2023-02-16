@@ -35,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 943774577156325930}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4412849314710689101
 MeshFilter:
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf3c0e906f4d314b92587524ab133a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  now: 1
 --- !u!1 &943774577156325929
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,8 +246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionTime: 0.1
   randomizeExplosionTime: 0
-  radius: 20
-  power: 1
+  radius: 50
+  power: 10
   probeCount: 100
   explodeDuration: 0.5
 --- !u!54 &943774577156325925
@@ -278,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionEffectsContainer: {fileID: 100000, guid: 15ca5b8fa431dc04291a79cadcd19874, type: 3}
-  scale: 1.6
+  scale: 5
   playbackSpeed: 0.8
 --- !u!114 &943774577156325931
 MonoBehaviour:
@@ -294,6 +295,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumetricExplosion: {fileID: 100000, guid: 5d028565f79e270408884b995abc06ef, type: 3}
   count: 5
-  scale: 1.5
+  scale: 5
   randomness: 0.6
   duration: 1.5

@@ -33,7 +33,7 @@ public class honey_drowing : MonoBehaviour
                 cube.gameObject.SetActive(false);
 
                 GameObject.Find("Monster").GetComponent<monstermove>().target = obj.transform;
-
+                GameObject.Find("babyMonster").GetComponent<babymonster>().target = obj.transform;
 
             }
 
