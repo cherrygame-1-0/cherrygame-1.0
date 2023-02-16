@@ -9,6 +9,7 @@ public class babymonster : MonoBehaviour
 
     public bool babyMondie = false;
 
+    int playone = 0;
     float timer;
     int waitingTime;
 
@@ -32,8 +33,12 @@ public class babymonster : MonoBehaviour
 
         if (babyMondie == true)
         {
-            transform.Rotate(new Vector3(0, 0, 100));
-            Destroy(gameObject, 1);
+            if ( playone == 0)
+            {
+                transform.Rotate(new Vector3(0, 0, 100));
+                Destroy(gameObject, 1);
+            }
+            playone = 1;
         }
 
         gun = GameObject.Find("playerRightHand").transform.Find("gun_grab");

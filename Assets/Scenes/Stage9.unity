@@ -7811,7 +7811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  enemyMoveSpeed: -15
+  enemyMoveSpeed: -10
   babyMondie: 0
   animator: {fileID: 0}
 --- !u!95 &387057026

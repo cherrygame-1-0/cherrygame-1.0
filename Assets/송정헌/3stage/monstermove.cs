@@ -14,7 +14,7 @@ public class monstermove : MonoBehaviour
 
     [SerializeField]
     private Animator animator;
-
+    int playone = 0;
 
     private Transform gun;
 
@@ -50,14 +50,20 @@ public class monstermove : MonoBehaviour
         }
         if (Mondie == true)
         {
-            transform.Rotate(new Vector3(0, 0, 100));
-            Destroy(gameObject, 1);
+            if (playone == 0)
+            {
+                transform.Rotate(new Vector3(0, 0, 100));
+                Destroy(gameObject, 1);
+            }
+            playone = 1;
         }
+
 
 
     }
     void OnCollisionEnter(Collision other)
     {
+
         if (other.gameObject.tag == "bullet")
         {
             print("go");

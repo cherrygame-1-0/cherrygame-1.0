@@ -27,6 +27,13 @@ public class bombstart : MonoBehaviour
 
             GameObject.Find("babyMonster").GetComponent<babymonster>().babyMondie = true;
 
+
+            GameObject.Find("Monster").GetComponent<monstermove>().target = null;
+
+
+            GameObject.Find("babyMonster").GetComponent<babymonster>().target = null;
+
+
             Destroy(gameObject, 0.3f);
 
         }
