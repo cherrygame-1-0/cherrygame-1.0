@@ -13,6 +13,7 @@ public class bombdrawing : MonoBehaviour
     private Transform cube;
     private Transform cube2;
 
+    private bool bomb = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +25,14 @@ public class bombdrawing : MonoBehaviour
     void Update()
     {
 
+        bomb = GameObject.Find("Canvas").GetComponent<Action_Btn>().Action;
+
+        cube = GameObject.Find("playerRightHand").transform.Find("bomb_grab");
 
         cube2 = GameObject.Find("playerRightHand").transform.Find("Hbomb_grab");
 
-        cube = GameObject.Find("playerRightHand").transform.Find("bomb_grab");
+
+
 
         if (cube.gameObject.activeSelf == true)
         {
@@ -41,28 +46,49 @@ public class bombdrawing : MonoBehaviour
                 cube.gameObject.SetActive(false);
 
                 //GameObject.Find("Monster").GetComponent<monstermove>().target = obj.transform;
-
-
             }
+            if (bomb == true)
+            {
+                GameObject obj = Instantiate(bullet, spot.transform.position, Quaternion.identity);
+                obj.GetComponent<Rigidbody>().AddForce(spot.transform.forward * 1000f);
 
+                cube.gameObject.SetActive(false);
+            }
         }
 
         if (cube2.gameObject.activeSelf == true)
         {
             print("Ã£À½");
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
 
                 GameObject obj = Instantiate(bullet2, spot.transform.position, Quaternion.identity);
                 obj.GetComponent<Rigidbody>().AddForce(spot.transform.forward * 1000f);
 
-                cube.gameObject.SetActive(false);
+                cube2.gameObject.SetActive(false);
 
                 GameObject.Find("Monster").GetComponent<monstermove>().target = obj.transform;
                 GameObject.Find("babyMonster").GetComponent<babymonster>().target = obj.transform;
 
+                GameObject.Find("Canvas").transform.Find("Action_C").gameObject.SetActive(false);
+
             }
 
+
+            if (bomb == true)
+            {
+                GameObject obj = Instantiate(bullet2, spot.transform.position, Quaternion.identity);
+                obj.GetComponent<Rigidbody>().AddForce(spot.transform.forward * 1000f);
+
+                cube2.gameObject.SetActive(false);
+
+                GameObject.Find("Monster").GetComponent<monstermove>().target = obj.transform;
+                GameObject.Find("babyMonster").GetComponent<babymonster>().target = obj.transform;
+
+
+                GameObject.Find("Canvas").transform.Find("Action_C").gameObject.SetActive(false);
+            }
         }
 
 

@@ -74,8 +74,8 @@ public class col : MonoBehaviour
 
 			if (other.gameObject.name == "honey")
 			{
-				G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
-				G_Btn.gameObject.SetActive(true);
+				//G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
+				//G_Btn.gameObject.SetActive(true);
 
 
 				ggun = GameObject.Find("gun");

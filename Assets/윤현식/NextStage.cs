@@ -31,6 +31,6 @@ public class NextStage : MonoBehaviour
     public void Goal()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Stage2");
+        SceneManager.LoadScene("Stage" + GameObject.Find("datadase").GetComponent<database>().nowPlayer.level );
     }
 }

@@ -139,6 +139,10 @@ public class col_ST9 : MonoBehaviour
 
 				if (other.gameObject.name == "bomb")
                 {
+					G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
+
+					G_Btn.gameObject.SetActive(true);
+
 					cube = GameObject.Find("playerRightHand").transform.Find("bomb_grab");
 
 					print("ÆøÅºÁÝ±â");

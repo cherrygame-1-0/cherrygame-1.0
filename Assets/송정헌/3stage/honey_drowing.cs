@@ -8,6 +8,7 @@ public class honey_drowing : MonoBehaviour
     public GameObject bullet;
     public GameObject spot;
     private Transform cube;
+    private bool honey = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,9 @@ public class honey_drowing : MonoBehaviour
     void Update()
     {
 
- cube = GameObject.Find("playerRightHand").transform.Find("honey_grab");
+    cube = GameObject.Find("playerRightHand").transform.Find("honey_grab");
+
+    honey = GameObject.Find("Canvas").GetComponent<Action_Btn>().Action;
 
         if (cube.gameObject.activeSelf == true)
         {
@@ -36,6 +39,22 @@ public class honey_drowing : MonoBehaviour
                 GameObject.Find("babyMonster").GetComponent<babymonster>().target = obj.transform;
 
             }
+
+            if (honey == true)
+            {
+
+                GameObject obj = Instantiate(bullet, spot.transform.position, Quaternion.identity);
+                obj.GetComponent<Rigidbody>().AddForce(spot.transform.forward * 1000f);
+
+                cube.gameObject.SetActive(false);
+
+                GameObject.Find("Monster").GetComponent<monstermove>().target = obj.transform;
+                GameObject.Find("babyMonster").GetComponent<babymonster>().target = obj.transform;
+
+                GameObject.Find("Canvas").transform.Find("Action_C").gameObject.SetActive(false);
+
+            }
+
 
         }
         

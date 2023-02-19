@@ -41,14 +41,12 @@ public class BeeChase : MonoBehaviour
             {
 
                 Vector3 dir = target.position - transform.position;
-                transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
-                transform.LookAt(transform.position + dir);
+                transform.Translate(-dir.normalized * enemyMoveSpeed * Time.deltaTime);
+                transform.LookAt(transform.position + -dir);
             }
             else
             {
-                Vector3 dir = target.position - transform.position;
-                transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
-                transform.LookAt(transform.position - dir);
+                GameObject.Find("Bee").GetComponent<csLinearWaypoint>().lemon = true;
             }
         }
     }

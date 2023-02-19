@@ -16,6 +16,7 @@ public class colstage2 : MonoBehaviour
 	GameObject obj2; // 다음 스테이지 넘어가려고
 	public bool GoalCheck = false;
 	int result = 0;
+	GameObject G_Btn;
 
 	private Transform cube;
 
@@ -52,6 +53,9 @@ public class colstage2 : MonoBehaviour
 
 			if (other.gameObject.name == "gun")
 			{
+				G_Btn = GameObject.Find("Canvas").transform.Find("Action_B").gameObject;
+				G_Btn.gameObject.SetActive(true);
+
 				honeey = GameObject.Find("honey");
 				Destroy(honeey);
 
@@ -67,6 +71,9 @@ public class colstage2 : MonoBehaviour
 
 			if (other.gameObject.name == "honey")
 			{
+				G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
+				G_Btn.gameObject.SetActive(true);
+
 				ggun = GameObject.Find("gun");
 				Destroy(ggun);
 

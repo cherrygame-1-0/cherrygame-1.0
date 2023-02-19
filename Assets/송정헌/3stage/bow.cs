@@ -5,7 +5,7 @@ using UnityEngine;
 public class bow : MonoBehaviour
 {
     Vector3 pos; //현재위치
-
+    private bool bowstart = false;
     float delta = 1.0f; // 좌(우)로 이동가능한 (x)최대값
 
     float speed = 3.5f; // 이동속도
@@ -18,13 +18,15 @@ public class bow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 v = pos;
+        if (bowstart == true)
+        {
+            transform.Translate(Vector3.back * 10 * Time.deltaTime, Space.World);
+        }
 
-        v.z -= delta * (Time.time * speed);
-
-        transform.position = v;
-
-        //transform.Rotate(new Vector3(0 , 100 * Time.deltaTime, 0));
+    }
+    private void OnTriggerEnter(Collider col)
+    {
+        bowstart = true;
     }
 
 }
