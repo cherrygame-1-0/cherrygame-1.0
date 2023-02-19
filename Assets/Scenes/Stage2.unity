@@ -26088,7 +26088,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713573446}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00d5bb290ef58e74fae9b3fb93fe0f03, type: 3}
   m_Name: 
@@ -26096,6 +26096,23 @@ MonoBehaviour:
   waypoint: {fileID: 727134695}
   speed: 5
   player: {fileID: 713573446}
+  lemon: 0
+--- !u!114 &713573453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713573446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8163d529a1470c49813d98db9ab738e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoint: {fileID: 727134695}
+  speed: 5
+  player: {fileID: 713573446}
+  lemon: 1
 --- !u!1001 &719337063
 PrefabInstance:
   m_ObjectHideFlags: 0

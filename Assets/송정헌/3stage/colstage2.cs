@@ -55,7 +55,7 @@ public class colstage2 : MonoBehaviour
 			{
 				G_Btn = GameObject.Find("Canvas").transform.Find("Action_B").gameObject;
 				G_Btn.gameObject.SetActive(true);
-
+				
 				honeey = GameObject.Find("honey");
 				Destroy(honeey);
 

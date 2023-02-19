@@ -13,6 +13,12 @@ public class Stage8_Bee : MonoBehaviour
 
     private Transform honey;
 
+    void start()
+    {
+
+        print("Ω√¿€");
+    }
+
     void Update()
     {
 
@@ -22,12 +28,25 @@ public class Stage8_Bee : MonoBehaviour
         if (target != null)
         {
 
+
+            //if (honey.gameObject.activeSelf == true)
+            //{
+
+            //    Vector3 dir = target.position - transform.position;
+            //    transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
+            //    transform.LookAt(transform.position + dir);
+            //}
+
             if (GameObject.Find("player").GetComponent<ColStage8>().eathoney == true)
             {
 
                 Vector3 dir = target.position - transform.position;
-                transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
-                transform.LookAt(transform.position + dir);
+                transform.Translate(-dir.normalized * enemyMoveSpeed * Time.deltaTime);
+                transform.LookAt(transform.position + -dir);
+            }
+            else
+            {
+                GameObject.Find("Bee").GetComponent<csLinearWaypoint>().lemon = true;
             }
         }
     }
@@ -39,5 +58,10 @@ public class Stage8_Bee : MonoBehaviour
             Debug.Log("Box Enemy:Target found");
 
         }
+    }
+
+    public void test()
+    {
+        print("zzz");
     }
 }
