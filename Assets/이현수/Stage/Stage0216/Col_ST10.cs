@@ -19,6 +19,7 @@ public class Col_ST10 : MonoBehaviour
 	GameObject G_Btn;
 	GameObject T_Btn;
 	GameObject obj2; // 다음 스테이지 넘어가려고
+	private Transform Bear1;
 	public bool GoalCheck = false;
 	int result = 0;
 
@@ -26,12 +27,16 @@ public class Col_ST10 : MonoBehaviour
 	private Transform cube2;
 	public Animation anim;
 
+	public int _Speed = 8;
+	public int _Jump_P = 10;
+	//public int _fight;
+
 	coindraw coindraw;
 	void Start()
 	{
 		cube = GameObject.Find("mixamorig:RightToeBase2").transform.Find("R_Foot");
 		cube2 = GameObject.Find("mixamorig:LeftToeBase3").transform.Find("L_Foot");
-
+		Bear1 = GameObject.Find("HideBear").transform.Find("H_Bear");
 
 		print("col 작동함?");
 		print("start");
@@ -58,15 +63,17 @@ public class Col_ST10 : MonoBehaviour
 			
 
 
+
+
 			Destroy(other.gameObject);
 
 
 			if (other.gameObject.name == "Jump")
 			{
 				G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
-				G_Btn.gameObject.SetActive(true);
+				//G_Btn.gameObject.SetActive(true);
 
-
+				_Jump_P = 30;
 				honeey = GameObject.Find("Speed");
 				Destroy(honeey);
 
@@ -85,9 +92,9 @@ public class Col_ST10 : MonoBehaviour
 			if (other.gameObject.name == "Speed")
 			{
 				G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
-				G_Btn.gameObject.SetActive(true);
+				//G_Btn.gameObject.SetActive(true);
 
-
+				_Speed = 15;
 				ggun = GameObject.Find("Jump");
 				Destroy(ggun);
 
@@ -106,8 +113,9 @@ public class Col_ST10 : MonoBehaviour
 			if (other.gameObject.name == "Power")
 			{
 				G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
-				G_Btn.gameObject.SetActive(true);
+				//G_Btn.gameObject.SetActive(true);
 
+				Bear1.gameObject.SetActive(true);
 
 				ggun = GameObject.Find("Jump");
 				Destroy(ggun);

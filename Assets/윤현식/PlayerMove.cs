@@ -14,6 +14,10 @@ public class PlayerMove : MonoBehaviour
     private bool IsJumping;
     public bool jumpBtn = false;
 
+    public int Speed;
+    public int Jump_P;
+    //public int fight;
+
     void Start()
     {
         Application.targetFrameRate = 240;
@@ -26,6 +30,13 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdate()
     {
         jumpBtn = GameObject.Find("Canvas").GetComponent<Jump_Btn>().inputJump;
+
+
+        Speed = GameObject.Find("player").GetComponent<Col_ST10>()._Speed;
+        runMoveSpeed = Speed;
+
+        Jump_P = GameObject.Find("player").GetComponent<Col_ST10>()._Jump_P;
+        JumpPower = Jump_P;
         //print(jumpBtn);
         Move();
         Jump();
@@ -103,6 +114,11 @@ public class PlayerMove : MonoBehaviour
     }
 
     public void lowjump()
+    {
+        rigid.AddForce(Vector3.up * JumpPower * 1.4f, ForceMode.Impulse);
+    }
+
+    public void lowlowjump()
     {
         rigid.AddForce(Vector3.up * JumpPower * 1.4f, ForceMode.Impulse);
     }
