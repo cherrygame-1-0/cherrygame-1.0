@@ -14,8 +14,7 @@ public class PlayerMove : MonoBehaviour
     private bool IsJumping;
     public bool jumpBtn = false;
 
-    public int Speed;
-    public int Jump_P;
+
     //public int fight;
 
     void Start()
@@ -32,11 +31,6 @@ public class PlayerMove : MonoBehaviour
         jumpBtn = GameObject.Find("Canvas").GetComponent<Jump_Btn>().inputJump;
 
 
-        Speed = GameObject.Find("player").GetComponent<Col_ST10>()._Speed;
-        runMoveSpeed = Speed;
-
-        Jump_P = GameObject.Find("player").GetComponent<Col_ST10>()._Jump_P;
-        JumpPower = Jump_P;
         //print(jumpBtn);
         Move();
         Jump();

@@ -72,8 +72,8 @@ public class Col_ST10 : MonoBehaviour
 			{
 				G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
 				//G_Btn.gameObject.SetActive(true);
+				GameObject.Find("player").GetComponent<PlayerMove>().JumpPower = 30;
 
-				_Jump_P = 30;
 				honeey = GameObject.Find("Speed");
 				Destroy(honeey);
 
@@ -94,7 +94,7 @@ public class Col_ST10 : MonoBehaviour
 				G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
 				//G_Btn.gameObject.SetActive(true);
 
-				_Speed = 15;
+				GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 15;
 				ggun = GameObject.Find("Jump");
 				Destroy(ggun);
 
@@ -179,7 +179,7 @@ public class Col_ST10 : MonoBehaviour
 			GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
 			obj2 = GameObject.Find("Canvas");
 			obj2.GetComponent<NextStage>().Show();
-
+			_Speed = 0;
 			GameObject.Find("datadase").GetComponent<database>().stage = int.Parse(playerstage);
 			GameObject.Find("datadase").GetComponent<database>().nowlevel = int.Parse(playerstage) + 1;
 			GameObject.Find("datadase").GetComponent<database>().nowcoin = (int)coindraw.coin;
