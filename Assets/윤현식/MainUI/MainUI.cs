@@ -10,6 +10,12 @@ public enum BTNType
     Sound,
     Back,
     Store,
+    Theme1,
+    Theme2,
+    Theme3,
+    Theme4,
+    Theme5,
+    Theme6,
     Quit
 }
 public class MainUI : MonoBehaviour

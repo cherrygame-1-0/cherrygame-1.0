@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("АјАн");
             EG.Attack();
+
         }
     }
 }

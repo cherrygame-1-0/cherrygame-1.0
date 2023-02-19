@@ -13,6 +13,12 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     public CanvasGroup stageGroup;
     public CanvasGroup optionGroup;
     public CanvasGroup storeGroup; // 상점 
+    public CanvasGroup _1Theme;
+    public CanvasGroup _2Theme;
+    public CanvasGroup _3Theme;
+    public CanvasGroup _4Theme;
+    public CanvasGroup _5Theme;
+    public CanvasGroup _6Theme;
     GameObject cherry;
 
     private void Start()
@@ -56,6 +62,36 @@ public class BtnType : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 CanvasGroupOff(stageGroup);
                 CanvasGroupOff(optionGroup);
                 cherry.SetActive(false);
+                break;
+            case BTNType.Theme1:
+                CanvasGroupOn(_1Theme);
+                CanvasGroupOff(stageGroup);
+                Debug.Log("1테마 선택됨");
+                break;
+            case BTNType.Theme2:
+                CanvasGroupOn(_2Theme);
+                CanvasGroupOff(stageGroup);
+                Debug.Log("2테마 선택됨");
+                break;
+            case BTNType.Theme3:
+                CanvasGroupOn(_3Theme);
+                CanvasGroupOff(stageGroup);
+                Debug.Log("3테마 선택됨");
+                break;
+            case BTNType.Theme4:
+                CanvasGroupOn(_4Theme);
+                CanvasGroupOff(stageGroup);
+                Debug.Log("4테마 선택됨");
+                break;
+            case BTNType.Theme5:
+                CanvasGroupOn(_5Theme);
+                CanvasGroupOff(stageGroup);
+                Debug.Log("5테마 선택됨");
+                break;
+            case BTNType.Theme6:
+                CanvasGroupOn(_6Theme);
+                CanvasGroupOff(stageGroup);
+                Debug.Log("6테마 선택됨");
                 break;
             case BTNType.Sound:
                 if(isSound)

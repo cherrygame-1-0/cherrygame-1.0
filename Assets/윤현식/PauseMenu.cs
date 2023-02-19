@@ -12,21 +12,39 @@ public class PauseMenu : MonoBehaviour
     public GameObject num2;
     public GameObject num1;
 
-    void Update()
+    private void Start()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            print("esc");
+        Time.timeScale = 0f;
+        StartCoroutine(ShowNumber3());
+    }
+    //void Update()
+    //{
+    //    if(Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        print("esc");
 
-            if (GameIsPaused)
-            {
-                //Resume();
-                CallResume();
-            }
-            else
-            {
-                Pause();
-            }
+    //        if (GameIsPaused)
+    //        {
+    //            //Resume();
+    //            CallResume();
+    //        }
+    //        else
+    //        {
+    //            Pause();
+    //        }
+    //    }
+    //}
+
+    public void ESC()
+    {
+        if (GameIsPaused)
+        {
+            //Resume();
+            CallResume();
+        }
+        else
+        {
+            Pause();
         }
     }
 
