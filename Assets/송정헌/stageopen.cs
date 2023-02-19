@@ -31,7 +31,7 @@ public class stageopen : MonoBehaviour
         if (Input.GetKeyDown("k"))
         {
             GameObject.Find("datadase").GetComponent<database>().nowPlayer.level = 10;
-            for (int i = stagelevelopen; i < 10; i++)
+            for (int i = stagelevelopen+10; i < 20; i++)
             {
                 transform.GetChild(i).gameObject.SetActive(true);
             }
@@ -39,7 +39,7 @@ public class stageopen : MonoBehaviour
 
         stagelevelopen = GameObject.Find("datadase").GetComponent<database>().nowPlayer.level;
         //print(stagelevelopen);
-        for (int i = stagelevelopen; i < 10; i++)
+        for (int i = stagelevelopen+10; i < 20; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
