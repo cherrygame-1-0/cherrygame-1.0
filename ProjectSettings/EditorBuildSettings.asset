@@ -4,47 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-<<<<<<< HEAD
-=======
-  - enabled: 0
-    path: "Assets/\uC774\uD604\uC218/Stage/Stage_0202/1234.unity"
-    guid: 34ec8ef6a4f82b4409434ce0fb373cff
->>>>>>> origin/LHS1.1
-  - enabled: 1
-    path: Assets/Scenes/Title.unity
-    guid: 9ffdfcd1dc23413499e07b7579f12d1c
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: e0a363531bdcaa04d8cef90391582bdd
-  - enabled: 1
-    path: Assets/Scenes/Stage1.unity
-    guid: 699db7cba4e0ce94598382020c806716
-  - enabled: 1
-    path: Assets/Scenes/Stage2.unity
-    guid: 1a138adb332116b47888bdcc9ba53a86
-  - enabled: 1
-    path: Assets/Scenes/Stage3.unity
-    guid: a35935bc4aeefcd42a8c865e9f7ca154
-  - enabled: 1
-    path: Assets/Scenes/Stage4.unity
-    guid: 08062156f46c61348a8e2ce11c5e239d
-  - enabled: 1
-    path: Assets/Scenes/Stage5.unity
-    guid: 5c26392d0ba676c4eb4d8d08698d0448
-  - enabled: 1
-    path: Assets/Scenes/Stage6.unity
-    guid: 3a96d1ed738e59c488ceeead25fee1ac
-  - enabled: 1
-    path: Assets/Scenes/Stage7.unity
-    guid: c039423dbcb2aa74dbcf2f56a9c2a5aa
-  - enabled: 1
-    path: Assets/Scenes/Stage8.unity
-    guid: 89b732b52c40a26478bcf2d2e3afe514
-  - enabled: 1
-    path: Assets/Scenes/Stage9.unity
-    guid: 65ead251f69a8854b96496298a8e83b7
-  - enabled: 1
-    path: Assets/Scenes/Stage10.unity
-    guid: 8f63c6a4b7adf554da5883f2cc9be164
+  m_Scenes: []
   m_configObjects: {}
