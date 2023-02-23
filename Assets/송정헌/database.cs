@@ -64,6 +64,7 @@ public class database : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 스테이지 초기화
         if (Input.GetKeyDown("n"))
         {
             nowPlayer.level = 1;
@@ -75,9 +76,10 @@ public class database : MonoBehaviour
             SaveData();
         }
 
+        // 스테이지 30레벨
         if (Input.GetKeyDown("k"))
         {
-            nowPlayer.level = 10;
+            nowPlayer.level = 30;
             nowPlayer.coin = 0;
             for (int i = 1; i < 30; i++)
             {

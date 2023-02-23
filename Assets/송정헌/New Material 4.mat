@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Monster
-  m_Shader: {fileID: 4800000, guid: d7f0644348f42a142b3a0bb6887eaa1a, type: 3}
+  m_Name: New Material 4
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,10 +24,6 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Cube:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -76,19 +72,12 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Refract: 0.044
-    - _SPMulti: 1
-    - _SPPower: 105
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaveH: 0.036
-    - _WaveL: 5.48
-    - _WaveT: 0.39
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.44719267, b: 1, a: 1}
+    - _Color: {r: 0.3490566, g: 0.115548216, b: 0.018111428, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SPColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

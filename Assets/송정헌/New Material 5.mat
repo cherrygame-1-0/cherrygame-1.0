@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Monster
+  m_Name: New Material 5
   m_Shader: {fileID: 4800000, guid: d7f0644348f42a142b3a0bb6887eaa1a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -76,19 +76,19 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Refract: 0.044
-    - _SPMulti: 1
-    - _SPPower: 105
+    - _Refract: 0.1
+    - _SPMulti: 3
+    - _SPPower: 150
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaveH: 0.036
-    - _WaveL: 5.48
-    - _WaveT: 0.39
+    - _WaveH: 0.1
+    - _WaveL: 12
+    - _WaveT: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.44719267, b: 1, a: 1}
+    - _Color: {r: 0.11681202, g: 0.20264523, b: 0.7075472, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SPColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SPColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
