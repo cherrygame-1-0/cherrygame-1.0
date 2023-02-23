@@ -16,7 +16,7 @@ public class stageThemeopen : MonoBehaviour
         print(transform.GetChild(0));
         print(stagelevelopen);
 
-        //stagelevelopen = 20;
+        stagelevelopen = 30;
 
         stagelevelopen_Theme = stagelevelopen / 10;
 
