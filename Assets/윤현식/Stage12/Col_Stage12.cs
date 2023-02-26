@@ -1,0 +1,150 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Col_Stage12 : MonoBehaviour
+{
+	[SerializeField]
+	private Animator animator;
+
+	public int ColorNum = 0;
+
+	string playerstage = "0";
+	GameObject honeey;
+	GameObject ggun;
+	GameObject ggun2;
+
+	GameObject obj1;
+	GameObject G_Btn;
+	GameObject T_Btn;
+	GameObject obj2; // ´ÙÀ½ ½ºÅ×ÀÌÁö ³Ñ¾î°¡·Á°í
+	private Transform Bear1;
+	public bool GoalCheck = false;
+	int result = 0;
+
+	private Transform cube;
+	private Transform cube2;
+	public Animation anim;
+
+	public int _Speed = 8;
+	public int _Jump_P = 10;
+	//public int _fight;
+
+	coindraw coindraw;
+	void Start()
+	{
+		cube = GameObject.Find("mixamorig:RightToeBase2").transform.Find("R_Foot");
+		cube2 = GameObject.Find("mixamorig:LeftToeBase3").transform.Find("L_Foot");
+		//Bear1 = GameObject.Find("HideBear").transform.Find("H_Bear");
+
+		print("col ÀÛµ¿ÇÔ?");
+		print("start");
+		coindraw = FindObjectOfType<coindraw>();
+		print(GameObject.Find("Main Camera").GetComponent<CameraMove_ST11>().Goalpass);
+	}
+	private void OnTriggerEnter(Collider col)
+	{
+		if (col.tag == "level")
+		{
+			print(col.transform.GetChild(0).gameObject.name);
+			playerstage = col.transform.GetChild(0).gameObject.name;
+
+		}
+	}
+	void OnCollisionEnter(Collision other)
+	{
+
+		if (other.gameObject.tag == "object")
+		{
+			cube = GameObject.Find("playerRightHand").transform.Find("gun_grab");
+
+
+
+
+
+
+			Destroy(other.gameObject);
+
+			if (other.gameObject.name == "gun")
+			{
+				G_Btn = GameObject.Find("Canvas").transform.Find("Action_B").gameObject;
+				G_Btn.gameObject.SetActive(true);
+
+				honeey = GameObject.Find("honey");
+				Destroy(honeey);
+
+				cube.gameObject.SetActive(false);
+
+				cube = GameObject.Find("playerRightHand").transform.Find("gun_grab");
+
+				print("ÃÑ È¹µæ");
+				cube.gameObject.SetActive(true);
+				animator.SetBool("Pistol", true);
+
+			}
+
+
+
+			if (other.gameObject.name == "coin")
+			{
+				//coindraw.GetScore();
+				coindraw.coin += 1;
+				print("ÄÚÀÎ È¹µæ");
+
+			}
+
+
+
+		}
+		if (other.gameObject.tag == "dieobject")
+
+		{
+			GameObject.Find("Monster").GetComponent<Chase>().target = null;
+
+			GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
+			GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
+			animator.SetBool("Die", true);
+			Destroy(gameObject, 2);
+
+			Debug.Log("GameOver");
+
+			obj1 = GameObject.Find("Canvas");
+			obj1.GetComponent<GameOverMenu>().Show();
+
+			if (other.gameObject.name == "bomb")
+			{
+				print("ÆøÅºÃæµ¹");
+				cube = other.transform.Find("DYNAMITE");
+				cube.gameObject.SetActive(true);
+			}
+
+		}
+
+		if (other.gameObject.tag == "goal") // °á½Â¼± ±¸Çö ÄÚµå
+
+		{
+			GoalCheck = true;
+			animator.SetBool("Clear", true);
+			animator.SetBool("IsMove", false);
+			animator.SetBool("Pistol", false);
+
+			Debug.Log("Goal");
+			GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
+			GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
+			obj2 = GameObject.Find("Canvas");
+			obj2.GetComponent<NextStage>().Show();
+			_Speed = 0;
+			GameObject.Find("datadase").GetComponent<database>().stage = int.Parse(playerstage);
+			GameObject.Find("datadase").GetComponent<database>().nowlevel = int.Parse(playerstage) + 1;
+			GameObject.Find("datadase").GetComponent<database>().nowcoin = (int)coindraw.coin;
+
+			print("·¹º§ÀÎ½Ä " + GameObject.Find("datadase").GetComponent<database>().nowPlayer.level);
+
+			GameObject.Find("datadase").GetComponent<database>().Savecall();
+
+			GameObject.Find("Main Camera").GetComponent<CameraMove_ST11>().Goalpass = true;
+
+			print(GameObject.Find("Main Camera").GetComponent<CameraMove_ST11>().Goalpass);
+		}
+	}
+}
