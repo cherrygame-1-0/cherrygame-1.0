@@ -2026,7 +2026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193579343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -63}
+  m_LocalPosition: {x: 0, y: 2, z: 17}
   m_LocalScale: {x: 4.5444, y: 8.262629, z: 1.7185559}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51db666d8e2cfb40a53a806a7c0b23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inout: 3
+  inout: 1
 --- !u!1001 &198905309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25450,6 +25450,7 @@ GameObject:
   - component: {fileID: 1964359383}
   - component: {fileID: 1964359382}
   - component: {fileID: 1964359385}
+  - component: {fileID: 1964359386}
   m_Layer: 0
   m_Name: doorout
   m_TagString: Untagged
@@ -25542,12 +25543,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964359380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d51db666d8e2cfb40a53a806a7c0b23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inout: 3
+  inout: 1
+--- !u!114 &1964359386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964359380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2627f4aa723a0214e814c05c61ebec7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inout: 0
 --- !u!1001 &1985871969
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -30,13 +30,13 @@ public class door : MonoBehaviour
             {
                 inout = 2;
 
-                //GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
-                //GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
-                //camera.gameObject.SetActive(false);
-                //print("입장");
-                //print(inout);
-                //print("inout");
-                //Destroy(gameObject);
+                GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
+                GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
+                camera.gameObject.SetActive(false);
+                print("입장");
+                print(inout);
+                print("inout");
+                Destroy(gameObject);
 
             }
 

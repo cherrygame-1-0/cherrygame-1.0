@@ -47,7 +47,12 @@ public class stageopen : MonoBehaviour
         }
 
 
-        GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[1] = 3;
+        GameObject.Find("datadase").GetComponent<database>().nowPlayer.level = 2;
+
+        GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[1] = 2;
+
+        GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[2] = 2;
+
 
         for (int i = 10; i < stagelevelopen + 10; i++)
         {
@@ -57,7 +62,7 @@ public class stageopen : MonoBehaviour
 
             for (int j = 1; j <= stagestar; j++)
             {
-                transform.GetChild(10).transform.GetChild(j).gameObject.SetActive(true);
+                transform.GetChild(i).transform.GetChild(j).gameObject.SetActive(true);
 
             }
 
