@@ -6996,7 +6996,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1167633279}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -12696,7 +12696,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1167633279}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: CallResume
         m_Mode: 1
@@ -14518,7 +14518,7 @@ GameObject:
   - component: {fileID: 1167633282}
   - component: {fileID: 1167633281}
   - component: {fileID: 1167633280}
-  - component: {fileID: 1167633279}
+  - component: {fileID: 1167633284}
   - component: {fileID: 1167633278}
   - component: {fileID: 1167633277}
   - component: {fileID: 1167633276}
@@ -14639,22 +14639,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1167633279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167633273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21326111f39e1f74dab83e7930860df3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 173792125}
-  num3: {fileID: 574511059}
-  num2: {fileID: 658734140}
-  num1: {fileID: 1153682991}
 --- !u!114 &1167633280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14750,6 +14734,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1167633284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167633273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a1f447afadb134fb87569e401e71d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 173792125}
+  num3: {fileID: 574511059}
+  num2: {fileID: 658734140}
+  num1: {fileID: 1153682991}
 --- !u!1001 &1179850643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17082,7 +17082,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1167633279}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -22920,7 +22920,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1167633279}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -24370,7 +24370,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1167633279}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -25672,7 +25672,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1167633279}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
