@@ -5,6 +5,7 @@ using UnityEngine;
 public class stageopen : MonoBehaviour
 {
     int stagelevelopen;
+    int stagestar = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,12 +38,32 @@ public class stageopen : MonoBehaviour
             }
         }
 
+        
         stagelevelopen = GameObject.Find("datadase").GetComponent<database>().nowPlayer.level;
         //print(stagelevelopen);
         for (int i = stagelevelopen+10; i < 20; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
+
+
+        GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[1] = 3;
+
+        for (int i = 10; i < stagelevelopen + 10; i++)
+        {
+            stagestar = GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[i - 9];
+
+            // print(stagestar);
+
+            for (int j = 1; j <= stagestar; j++)
+            {
+                transform.GetChild(10).transform.GetChild(j).gameObject.SetActive(true);
+
+            }
+
+        }
+
+
 
     }
 }

@@ -27,8 +27,8 @@ public class stageThemeopen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("테마 레벨 출력");
-        print(stagelevelopen_Theme);
+
+
 
         for (int i = stagelevelopen_Theme + 2; i < 7; i++)
         {

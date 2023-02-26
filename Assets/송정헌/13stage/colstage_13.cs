@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Col_ST11 : MonoBehaviour
+public class colstage_13 : MonoBehaviour
 {
-
 	[SerializeField]
 	private Animator animator;
 
@@ -61,7 +60,7 @@ public class Col_ST11 : MonoBehaviour
 			cube = GameObject.Find("mixamorig:RightToeBase2").transform.Find("R_Foot");
 			cube2 = GameObject.Find("mixamorig:LeftToeBase3").transform.Find("L_Foot");
 
-			
+
 
 
 
@@ -87,7 +86,7 @@ public class Col_ST11 : MonoBehaviour
 				ColorNum = 2;
 
 				print("Á¡ÇÁ È¹µæ");
-				
+
 			}
 
 			if (other.gameObject.name == "Speed")
@@ -108,7 +107,7 @@ public class Col_ST11 : MonoBehaviour
 				ColorNum = 1;
 
 				print("½ºÇÇµå È¹µæ");
-				
+
 			}
 
 			if (other.gameObject.name == "Power")
