@@ -38,7 +38,8 @@ public class stageopen : MonoBehaviour
             }
         }
 
-        
+        //GameObject.Find("datadase").GetComponent<database>().nowPlayer.level = 2;
+
         stagelevelopen = GameObject.Find("datadase").GetComponent<database>().nowPlayer.level;
         //print(stagelevelopen);
         for (int i = stagelevelopen+10; i < 20; i++)
@@ -47,18 +48,18 @@ public class stageopen : MonoBehaviour
         }
 
 
-        GameObject.Find("datadase").GetComponent<database>().nowPlayer.level = 2;
 
-        GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[1] = 2;
 
-        GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[2] = 2;
+        //GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[1] = 2;
+
+        //GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[2] = 2;
 
 
         for (int i = 10; i < stagelevelopen + 10; i++)
         {
             stagestar = GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[i - 9];
 
-            // print(stagestar);
+            print(stagestar);
 
             for (int j = 1; j <= stagestar; j++)
             {
