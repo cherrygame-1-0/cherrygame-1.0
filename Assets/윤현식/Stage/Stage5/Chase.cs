@@ -14,6 +14,8 @@ public class Chase : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    GameObject Heart;
+    GameObject Threat;
 
     private Transform gun;
 
@@ -45,6 +47,18 @@ public class Chase : MonoBehaviour
                 Vector3 dir = target.position - transform.position;
                 transform.Translate(dir.normalized * enemyMoveSpeed * Time.deltaTime);
                 transform.LookAt(transform.position + dir);
+            }
+
+            if (honey.gameObject.activeSelf == true)
+            {
+                Heart = GameObject.Find("Monster").transform.Find("Heart").gameObject;
+                Heart.gameObject.SetActive(true);
+            }
+
+            if (gun.gameObject.activeSelf == true)
+            {
+                Threat = GameObject.Find("Monster").transform.Find("Threat").gameObject;
+                Threat.gameObject.SetActive(true);
             }
         }
 
