@@ -51,6 +51,21 @@ public class Col_Stage12 : MonoBehaviour
 
 		}
 	}
+
+	public void Die()
+    {
+		GameObject.Find("Monster").GetComponent<Chase>().target = null;
+
+		GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
+		GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
+		animator.SetBool("Die", true);
+		Destroy(gameObject, 2);
+
+		Debug.Log("GameOver");
+
+		obj1 = GameObject.Find("Canvas");
+		obj1.GetComponent<GameOverMenu>().Show();
+	}
 	void OnCollisionEnter(Collision other)
 	{
 
@@ -84,8 +99,47 @@ public class Col_Stage12 : MonoBehaviour
 			}
 
 
+			if (other.gameObject.name == "Speed")
+			{
+				G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
+				//G_Btn.gameObject.SetActive(true);
 
-			if (other.gameObject.name == "coin")
+				GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 15;
+				ggun = GameObject.Find("Jump");
+				Destroy(ggun);
+
+				ggun2 = GameObject.Find("Power");
+				Destroy(honeey);
+
+				cube.gameObject.SetActive(true);
+				cube2.gameObject.SetActive(true);
+
+				ColorNum = 1;
+
+				print("½ºÇÇµå È¹µæ");
+
+			}
+
+			if (other.gameObject.name == "Jump")
+			{
+				G_Btn = GameObject.Find("Canvas").transform.Find("Action_C").gameObject;
+				//G_Btn.gameObject.SetActive(true);
+				GameObject.Find("player").GetComponent<PlayerMove>().JumpPower = 30;
+
+				honeey = GameObject.Find("Speed");
+				Destroy(honeey);
+
+				ggun2 = GameObject.Find("Power");
+				Destroy(honeey);
+
+				cube.gameObject.SetActive(true);
+				cube2.gameObject.SetActive(true);
+
+				ColorNum = 2;
+			}
+
+
+				if (other.gameObject.name == "coin")
 			{
 				//coindraw.GetScore();
 				coindraw.coin += 1;
@@ -99,18 +153,7 @@ public class Col_Stage12 : MonoBehaviour
 		if (other.gameObject.tag == "dieobject")
 
 		{
-			GameObject.Find("Monster").GetComponent<Chase>().target = null;
-
-			GameObject.Find("player").GetComponent<PlayerMove>().runMoveSpeed = 0;
-			GameObject.Find("player").GetComponent<PlayerMove>().MoveSpeed = 0;
-			animator.SetBool("Die", true);
-			Destroy(gameObject, 2);
-
-			Debug.Log("GameOver");
-
-			obj1 = GameObject.Find("Canvas");
-			obj1.GetComponent<GameOverMenu>().Show();
-
+			Die();
 			if (other.gameObject.name == "bomb")
 			{
 				print("ÆøÅºÃæµ¹");
