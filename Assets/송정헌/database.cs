@@ -37,17 +37,22 @@ public class database : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 1; i< 30; i++)
-        {
-            nowPlayer.stagecoin[i] = 0;
-        }
 
-        nowlevel = 1;
-        nowcoin = 0;
+        //if(nowPlayer.stagecoin[0] == 0)
+        //{
+        //    for (int i = 1; i < 30; i++)
+        //    {
+        //        nowPlayer.stagecoin[i] = 0;
+        //    }
+        //}
 
-        nowPlayer.level = nowlevel;
-        nowPlayer.coin = nowcoin;
-        print(path);
+
+        //nowlevel = 1;
+        //nowcoin = 0;
+
+        //nowPlayer.level = nowlevel;
+        //nowPlayer.coin = nowcoin;
+        //print(path);
     }
 
     public void SaveData()
@@ -64,59 +69,69 @@ public class database : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 스테이지 초기화
-        if (Input.GetKeyDown("n"))
-        {
-            nowPlayer.level = 1;
-            nowPlayer.coin = 0;
-            for (int i = 1; i < 30; i++)
-            {
-                nowPlayer.stagecoin[i] = 0;
-            }
-            SaveData();
-        }
+        //// 스테이지 초기화
+        //if (Input.GetKeyDown("n"))
+        //{
+        //    nowPlayer.level = 1;
+        //    nowPlayer.coin = 0;
+        //    for (int i = 1; i < 30; i++)
+        //    {
+        //        nowPlayer.stagecoin[i] = 0;
+        //    }
+        //    SaveData();
+        //}
 
-        // 스테이지 30레벨
-        if (Input.GetKeyDown("k"))
-        {
-            nowPlayer.level = 30;
-            nowPlayer.coin = 0;
-            for (int i = 1; i < 30; i++)
-            {
-                nowPlayer.stagecoin[i] = 0;
-            }
-            SaveData();
-        }
+        //// 스테이지 30레벨
+        //if (Input.GetKeyDown("k"))
+        //{
+        //    nowPlayer.level = 30;
+        //    nowPlayer.coin = 0;
+        //    for (int i = 1; i < 30; i++)
+        //    {
+        //        nowPlayer.stagecoin[i] = 0;
+        //    }
+        //    SaveData();
+        //}
 
 
-        if (Input.GetKeyDown("s"))
-        {
-            print("s누름");
-            Savecall();
-            print("?");
-        }
+        //if (Input.GetKeyDown("s"))
+        //{
+        //    print("s누름");
+        //    Savecall();
+        //    print("?");
+        //}
 
-        if (Input.GetKeyDown("l"))
+        //if (Input.GetKeyDown("p"))
+        //{
+        //    LoadData();
+
+        //    print("level = " + nowPlayer.level);
+
+        //    for (int i = 1; i < 30; i++)
+        //    {
+        //        print("stage" + i + " 코인 = " + nowPlayer.stagecoin[i]);
+        //    }
+
+        //    for (int i = 1; i < 30; i++)
+        //    {
+        //        nowPlayer.stagecoin[0] = nowPlayer.stagecoin[0] + nowPlayer.stagecoin[i];
+        //    }
+        //    nowPlayer.coin = nowPlayer.stagecoin[0];
+        //    print("전체 코인 개수 = " + nowPlayer.stagecoin[0]);
+
+        //    //print(nowPlayer.stagecoin[1]);
+
+        //}
+
+        if (Input.GetKeyDown("p"))
         {
             LoadData();
-
-            print("level = " + nowPlayer.level);
-
             for (int i = 1; i < 30; i++)
             {
-                print("stage" + i + " 코인 = " + nowPlayer.stagecoin[i]);
+                print("stage" + i + " 코인 왜 저장안되는거야 = " + nowPlayer.stagecoin[i]);
             }
-
-            for (int i = 1; i < 30; i++)
-            {
-                nowPlayer.stagecoin[0] = nowPlayer.stagecoin[0] + nowPlayer.stagecoin[i];
-            }
-            nowPlayer.coin = nowPlayer.stagecoin[0];
-            print("전체 코인 개수 = " + nowPlayer.stagecoin[0]);
-
-            //print(nowPlayer.stagecoin[1]);
-
         }
+
     }
     public void Savecall()
     {

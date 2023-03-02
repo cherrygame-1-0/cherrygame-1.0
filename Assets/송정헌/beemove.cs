@@ -46,7 +46,7 @@ public class beemove : MonoBehaviour
 			player.transform.forward = new Vector3(-player.transform.forward.x, 0, -player.transform.forward.z);
 
 			float distance = Vector3.Distance(player.transform.position, targetWayPoint);
-			print(distance);
+			//print(distance);
 			if (distance < 0.9f)
 			{
 				player.transform.position = Vector3.MoveTowards(player.transform.position, targetWayPoint,

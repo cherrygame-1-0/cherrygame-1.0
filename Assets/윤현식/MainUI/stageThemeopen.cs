@@ -16,7 +16,7 @@ public class stageThemeopen : MonoBehaviour
         print(transform.GetChild(0));
         print(stagelevelopen);
 
-        stagelevelopen = 30;
+        stagelevelopen = 11;
 
         stagelevelopen_Theme = stagelevelopen / 10;
 
@@ -30,7 +30,7 @@ public class stageThemeopen : MonoBehaviour
 
 
 
-        for (int i = stagelevelopen_Theme + 2; i < 7; i++)
+        for (int i = 7; i < 7 + stagelevelopen_Theme; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }

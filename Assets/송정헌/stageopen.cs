@@ -50,6 +50,13 @@ public class stageopen : MonoBehaviour
 
 
 
+        for (int i = 1; i < 30; i++)
+        {
+            print("stage" + i + " 코인 왜 저장안되는거야 스테이지 열림 = " + GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[i]);
+            
+        }
+
+
         //GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[1] = 2;
 
         //GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[2] = 2;
@@ -60,7 +67,10 @@ public class stageopen : MonoBehaviour
             stagestar = GameObject.Find("datadase").GetComponent<database>().nowPlayer.stagecoin[i - 9];
 
             print(stagestar);
-
+            if (stagestar >= 3)
+            {
+                stagestar = 3;
+            }
             for (int j = 1; j <= stagestar; j++)
             {
                 transform.GetChild(i).transform.GetChild(j).gameObject.SetActive(true);
